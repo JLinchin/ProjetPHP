@@ -1,10 +1,3 @@
 # ProjetPHP
 
-6/11/23 (fait)
-MCD + base de données,
-création du gitHub,
-
-7/11/23 (à faire)
-insertion des données dans la base,
-diagramme des cas d'utilisations,
-visuel du site,
+Lien Figma : https://www.figma.com/file/RSm6snZ4EMahohYzMGlqNi/Untitled?type=design&node-id=0%3A1&mode=design&t=s7LZt3ziyYpSIquZ-1
