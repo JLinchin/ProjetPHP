@@ -26,7 +26,7 @@ class Utilisateur
     {
         return $this->login;
     }
-    public function getMdp
+    public function getMdp()
     {
         return $this->mdp;
     }
