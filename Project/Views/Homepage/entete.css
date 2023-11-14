@@ -32,11 +32,6 @@ nav.main-navigation ul.nav-list {
     margin-right: 15px;
     margin-top: 25px;
     font-size: 15px;
-    transition: transform 0.3s;
-}
-
-.nav-list li.nav-list-item:hover {
-    transform: scale(1.1); /* Zoom de 10% au survol */
 }
 
 a.nav-link {
