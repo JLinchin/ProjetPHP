@@ -31,3 +31,5 @@ class Utilisateur
         return $this->mdp;
     }
 }
+
+?>
