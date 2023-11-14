@@ -130,3 +130,13 @@ a.nav-link {
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
 }
+
+
+.nav-list-item a{
+   transition: 0.3s;
+}
+
+.nav-list-item a:hover{
+    transition: 0.3s;
+    scale: 1.2;
+}
