@@ -1,3 +1,20 @@
+.titreSingle {
+    width: 144px;
+    height: 37px;
+    flex-shrink: 0;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.imgAlbum {
+    width: 205px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
 .Button {
     width: 86px;
     height: 33px;
