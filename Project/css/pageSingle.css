@@ -42,18 +42,19 @@ body{
     margin-right: 25px;
 }
 .paroles {
-    width: 100%; /* Utilisez 100% pour que cela occupe toute la largeur disponible */
-    max-width: 1400px; /* Définissez une largeur maximale pour éviter un débordement excessif */
+    width: 100%;
+    max-width: 1400px;
     font-size: 20px;
-    margin-top: 67px;
-    height: 350px; /* Utilisez "auto" pour ajuster la hauteur en fonction du contenu */
+    height: 350px; /* Conservez la hauteur fixe */
     border-radius: 10px;
     display: flex;
-    justify-content: flex-end;
+    margin-top: 67px;
     margin-right: 42px;
     background: #90E0FF;
     padding: 12px;
-    overflow: auto; 
+    overflow-y: auto; /* Ajoutez cette ligne pour activer la barre de défilement vertical */
+    padding-bottom: 10px;
+    white-space: pre-line;
 }
 
 .button {
