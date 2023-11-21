@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'MaPolice'; /* Nom de la police que vous utiliserez dans votre CSS */
+    src: url(../../Project/fonts/Magic.ttf) format('truetype'); /* Chemin vers le fichier de la police */
+}
+
 body{
     background: #FFAF90;
     margin : 0;
@@ -6,16 +11,18 @@ body{
 
 .single {
     margin-left: 60px;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-right: 60px;
+}
+
+.titreSingle{
+    font-family: 'MaPolice', sans-serif;
 }
 .infoSingle {
     width: 144px;
-    height: 37px;
     flex-shrink: 0;
     font-family: Inter;
     font-size: 20px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
@@ -24,12 +31,15 @@ body{
 .infoDuSingle{
     margin-top: 12px;
     font-size: 22px;
+    padding-top: 24px;
     display: flex;
     float: left;
     flex-direction: column;
+    font-family: 'MaPolice', sans-serif;
 }
 
 .duree{
+    margin-top: 24px;
     font-size: 20px;
 }
 
@@ -48,7 +58,6 @@ body{
     height: 350px; /* Conservez la hauteur fixe */
     border-radius: 10px;
     display: flex;
-    margin-top: 67px;
     margin-right: 42px;
     background: #90E0FF;
     padding: 12px;
@@ -79,11 +88,12 @@ body{
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
     background: #BBF6BE;
+    
 }
 
 .btnModif:hover{
     cursor: pointer;
-    background: #55e65c;
+    background: #82EB88;
 }
 
 .btnSupp {
@@ -94,5 +104,6 @@ body{
 
 .btnSupp:hover{
     cursor: pointer;
-    background: #FF0E09 ;
+    background: #ff4c49 ;
 }
+
