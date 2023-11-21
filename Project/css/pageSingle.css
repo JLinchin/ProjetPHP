@@ -1,3 +1,13 @@
+body{
+    background: #FFAF90;
+    margin : 0;
+    padding: 0;
+}
+
+.single {
+    margin-left: 60px;
+    margin-top: 40px;
+}
 .infoSingle {
     width: 144px;
     height: 37px;
@@ -9,32 +19,71 @@
     line-height: normal;
 }
 
+.nomInterprete {
+    margin-top: 12px;
+}
 .duree {
     font-size: 20px;
 }
 
 .imgAlbum {
-    width: 205px;
-    height: 180px;
+    width: 350px;
+    height: 350px;
     flex-shrink: 0;
+    display: flex;
+    float: left;
+}
+.paroles {
+    width: 100%; /* Utilisez 100% pour que cela occupe toute la largeur disponible */
+    max-width: 1400px; /* Définissez une largeur maximale pour éviter un débordement excessif */
+    font-size: 20px;
+    margin-top: 67px;
+    height: 350px; /* Utilisez "auto" pour ajuster la hauteur en fonction du contenu */
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 42px;
+    background: #90E0FF;
+    padding: 12px;
+    overflow: auto; 
 }
 
 .button {
-    width: 86px;
-    height: 33px;
-    flex-shrink: 0;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content:flex-end;
+    padding-right: 80px;
+    font-size: 24px;
+}
+
+.wrap{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    margin-top: 15px;
 }
 
 .btnModif{
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    opacity: 0.6;
     background: #BBF6BE;
+}
+
+.btnModif:hover{
+    cursor: pointer;
+    background: #55e65c;
 }
 
 .btnSupp {
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    opacity: 0.6;
-    background: rgba(255, 14, 9, 0.70);
+    background: #ff615e;
+}
+
+.btnSupp:hover{
+    cursor: pointer;
+    background: #FF0E09 ;
 }
