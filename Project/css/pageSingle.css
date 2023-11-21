@@ -1,0 +1,19 @@
+.Button {
+    width: 86px;
+    height: 33px;
+    flex-shrink: 0;
+}
+
+.btnModif{
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    opacity: 0.6;
+    background: #BBF6BE;
+}
+
+.btnSupprimer {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    opacity: 0.6;
+    background: rgba(255, 14, 9, 0.70);
+}
