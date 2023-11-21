@@ -19,10 +19,16 @@ body{
     line-height: normal;
 }
 
-.nomInterprete {
+
+.infoDuSingle{
     margin-top: 12px;
+    font-size: 22px;
+    display: flex;
+    float: left;
+    flex-direction: column;
 }
-.duree {
+
+.duree{
     font-size: 20px;
 }
 
@@ -32,6 +38,7 @@ body{
     flex-shrink: 0;
     display: flex;
     float: left;
+    margin-right: 25px;
 }
 .paroles {
     width: 100%; /* Utilisez 100% pour que cela occupe toute la largeur disponible */

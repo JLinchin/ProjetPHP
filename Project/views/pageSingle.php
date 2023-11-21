@@ -11,9 +11,11 @@
             <div class="infoSingle">
                 <h1 class="titreSingle">Titre du Single</h1>
                 <img class="imgAlbum" src="../../Project/Assets/Jaquette.jpg"></img>
-                <h2 class="nomInterprete">Interprete</h2>
-                <h2 class="titreAlbum">Album</h2>
-                <h2 class="duree">00:00</h2>
+                <div class="infoDuSingle">
+                    <h2 class="nomInterprete">Interprete</h2>
+                    <h2 class="titreAlbum">Album</h2>
+                    <h2 class="duree">00:00</h2>
+                </div>
             </div>
             <div class="paroles">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
