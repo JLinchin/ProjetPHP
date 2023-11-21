@@ -1,4 +1,4 @@
-.titreSingle {
+.infoSingle {
     width: 144px;
     height: 37px;
     flex-shrink: 0;
@@ -9,13 +9,17 @@
     line-height: normal;
 }
 
+.duree {
+    font-size: 20px;
+}
+
 .imgAlbum {
     width: 205px;
     height: 180px;
     flex-shrink: 0;
 }
 
-.Button {
+.button {
     width: 86px;
     height: 33px;
     flex-shrink: 0;
@@ -28,7 +32,7 @@
     background: #BBF6BE;
 }
 
-.btnSupprimer {
+.btnSupp {
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
     opacity: 0.6;
