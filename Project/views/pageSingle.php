@@ -12,9 +12,7 @@
         <div class="single">
         <h1 class="titreSingle">Titre du Single</h1>
             <div class="infoSingle">
-                <a href="https://www.youtube.com/watch?v=mHONNcZbwDY" target="_blank">
-                    <img class="imgAlbum" src="../Images/22.BackToFront.jpg" alt="Nom alternatif de l'image">
-                </a>
+                <img class="imgAlbum" src="../Images/22.BackToFront.jpg" link href="https://www.youtube.com/watch?v=mHONNcZbwDY"></img>
                 <div class="infoDuSingle">
                     <h2 class="nomInterprete">Interprete</h2>
                     <h2 class="titreAlbum">Album</h2>

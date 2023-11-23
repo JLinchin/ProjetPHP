@@ -51,7 +51,7 @@ body{
     margin-right: 25px;
 }
 .paroles {
-    width: 50%;
+    width: 100%;
     max-width: 1400px;
     font-size: 20px;
     height: 350px; /* Conservez la hauteur fixe */
