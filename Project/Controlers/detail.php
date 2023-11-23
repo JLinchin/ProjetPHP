@@ -15,6 +15,6 @@ $uneImage = getImageByIdC($idC);
 
 $titre = $uneChanson->__get("nom");
 include "$racine/vue/entete.php";
-include "$racine/vue/DeatailChanson.php";
+include "$racine/vue/pageSingle.php";
 include "$racine/vue/enpied.php";
 ?>
