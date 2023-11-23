@@ -27,7 +27,6 @@ body{
     line-height: normal;
 }
 
-
 .infoDuSingle{
     margin-top: 12px;
     font-size: 22px;
@@ -52,7 +51,7 @@ body{
     margin-right: 25px;
 }
 .paroles {
-    width: 100%;
+    width: 50%;
     max-width: 1400px;
     font-size: 20px;
     height: 350px; /* Conservez la hauteur fixe */
