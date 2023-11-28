@@ -5,7 +5,7 @@ class Album
     private $nom;
     private $lienImage;
 
-    public function Personne($id, $nom,$lienImage) {
+    public function __construct($id, $nom,$lienImage) {
 		$this->id = $id;
 		$this->nom = $nom;
 		$this->lienImage = $lienImage;

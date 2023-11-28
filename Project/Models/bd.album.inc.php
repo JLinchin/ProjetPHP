@@ -4,9 +4,9 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
     $racine = "..";
 
 include_once "bd.inc.php";
-include_once "$racine/Classes/Album.php";
+include_once "../Classes/Album.php";
 
-public function getAlbum(){
+function getAlbum(){
     $lesAlbums = array();
     try
     {
@@ -17,7 +17,7 @@ public function getAlbum(){
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
         while ($ligne)
         {
-            $unAlbum = new Chanson($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
+            $unAlbum = new Album($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
             $lesAlbums[] = $unAlbum;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
         }
@@ -31,7 +31,7 @@ public function getAlbum(){
     return $lesAlbums;
 }
 
-public function getAlbumById($idA){
+function getAlbumById($idA){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from album where id = :idA");
@@ -40,7 +40,7 @@ public function getAlbumById($idA){
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $unAlbum = new Chanson($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
+        $unAlbum = new Album($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
     }
 
     catch (PDOException $e)
@@ -51,7 +51,7 @@ public function getAlbumById($idA){
     return $unAlbum;
 }
 
-public function getAlbumByTitre($titre){
+function getAlbumByTitre($titre){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from album where nom = :titre");
@@ -60,7 +60,7 @@ public function getAlbumByTitre($titre){
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $unAlbum = new Chanson($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
+        $unAlbum = new Album($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
     }
 
     catch (PDOException $e)
@@ -71,7 +71,7 @@ public function getAlbumByTitre($titre){
     return $unAlbum;
 }
 
-public function getAlbumByIdChanson($idChanson){
+function getAlbumByIdChanson($idChanson){
     try{
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from album inner join chanson on id = idAlbum where id = :idChanson");
@@ -79,7 +79,7 @@ public function getAlbumByIdChanson($idChanson){
 
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $unAlbum = new Chanson($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
+        $unAlbum = new Album($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
     }
     catch (PDOException $e)
     {
@@ -89,7 +89,7 @@ public function getAlbumByIdChanson($idChanson){
     return $unAlbum;
 }
 
-public function getAlbumByTitreChanson($titreC){
+function getAlbumByTitreChanson($titreC){
     try{
         $cnx = connexionPDO();
         $req = $cnx->prepare("SELECT Album.*
@@ -100,7 +100,7 @@ public function getAlbumByTitreChanson($titreC){
 
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $unAlbum = new Chanson($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
+        $unAlbum = new Album($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
     }
     catch (PDOException $e)
     {
@@ -110,7 +110,7 @@ public function getAlbumByTitreChanson($titreC){
     return $unAlbum;
 }
 
-public function addAlbum($id, $nom, $lien){
+function addAlbum($id, $nom, $lien){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("insert into Album(id, nom, lienImage) values(:id, :nom, :lien)");
@@ -127,7 +127,7 @@ public function addAlbum($id, $nom, $lien){
     }
 }
 
-public function setAlbum($id, $nouveauNom, $nouveauLien)
+function setAlbum($id, $nouveauNom, $nouveauLien)
 {
     try {
         $cnx = connexionPDO(); 
@@ -144,7 +144,7 @@ public function setAlbum($id, $nouveauNom, $nouveauLien)
     }
 }
 
-public function deleteAlbum($id)
+function deleteAlbum($id)
 {
     try {
         $cnx = connexionPDO(); 
