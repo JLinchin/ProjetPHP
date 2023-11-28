@@ -8,7 +8,7 @@ include_once "$racine/classes/Chanson.php";
 
 function getChansons()
 {
-    $lesChnasons = array();
+    $lesChansons = array();
     try
     {
         $cnx = connexionPDO();
@@ -19,7 +19,7 @@ function getChansons()
         while ($ligne)
         {
             $uneChanson = new Chanson($ligne["id"], $ligne["nom"], $ligne["dateSortie"], $ligne["genre"], $ligne["duree"], $ligne["meilleurePlace"], $ligne["paroles"], $ligne["idAlbum"]);
-            $lesChnasons[] = $uneChanson;
+            $lesChansons[] = $uneChanson;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
         }
     }
@@ -30,7 +30,7 @@ function getChansons()
         die();
     }
 
-    return $lesChnasons;
+    return $lesChansons;
 }
 
 
