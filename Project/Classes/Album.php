@@ -6,10 +6,10 @@ class Album
     private $lienImage;
 
     public function Personne($id, $nom,$lienImage) {
-	$this->id = $id;
-	$this->nom = $nom;
-    $this->lienImage = $lienImage;
-    }
+		$this->id = $id;
+		$this->nom = $nom;
+		$this->lienImage = $lienImage;
+	}
 
     public function __get($propriete) {
 	switch ($propriete) {
