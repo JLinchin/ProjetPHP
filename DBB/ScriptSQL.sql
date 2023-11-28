@@ -58,8 +58,8 @@ create table Chanter
 create table User
 (
     idUser int(3) primary key,
-    userLog string(30),
-    mdp string(30)
+    userLog varchar(30),
+    mdp varchar(30)
 );
 
 INSERT INTO Album (nom, lienImage) VALUES 
