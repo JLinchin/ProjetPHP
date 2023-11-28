@@ -4,7 +4,7 @@ class Chanson{
     private $id;
     private $nom;
     private $dateSortie;
-    private $genre:
+    private $genre;
     private $duree;
     private $meilleurePlace;
     private $paroles;
@@ -36,14 +36,14 @@ class Chanson{
     }
 
     public function __set($propriete, $value) {
-        switch ($propriete, $value) {
-            case "id" : $this->id; break;
+        switch ($propriete) {
+            case "id" : $this->id = $value; break;
             case "nom" : return $this->nom = $value;break;
             case "dateSortie" : $this->dateSortie= $value;break;
             case "genre" : $this->genre = $value;break;
             case "duree" : $this->duree = $value; break;
             case "meilleurPlace" : $this->meilleurePlace = $value;break;
-            case "paroles" : $this->paroles = $value break;
+            case "paroles" : $this->paroles = $value; break;
             case "idAlbum" : $this->idAlbum = $value;break;
         }
     }

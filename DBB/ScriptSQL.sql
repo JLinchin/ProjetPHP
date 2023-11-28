@@ -55,6 +55,13 @@ create table Chanter
     foreign key (idInterprete) references Interprete(id)
 );
 
+create table User
+(
+    idUser int(3) primary key,
+    userLog string(30),
+    mdp string(30)
+);
+
 INSERT INTO Album (nom, lienImage) VALUES 
 ('The Immaculate Collection', null),
 ('Singulier 81 - 89', null),
@@ -87,7 +94,7 @@ INSERT INTO Album (nom, lienImage) VALUES
 ('Africa', null),
 ('The Greatest Hits Collection - Collector Edition', null),
 ('The Best Of The Bangles', null),
-('That\'s The Way I Like It: The Best of Dead Or Alive', null),
+("That's The Way I Like It: The Best of Dead Or Alive", null),
 ('Love On The Beat', null),
 ('Whitney', null),
 ('Samantha Fox Greatest Hits', null),
@@ -114,13 +121,13 @@ INSERT INTO Album (nom, lienImage) VALUES
 ('Toto IV', null),
 ('True Blue', null),
 ('Eve lève-toi', null),
-('Terence Trent D\'Arby\'s Greatest Hits', null),
+("Terence Trent D'Arby's Greatest Hits", null),
 ('Never for Ever', null),
 ('Sultans Of Swing - The Very Best Of Dire Straits', null),
 ('Le Banana Split (Remix Album)', null),
 ('50 Great Songs', null),
 ('Isabelle Adjani', null),
-('Nothing\'s Gonna Change My Love For You', null),
+("Nothing's Gonna Change My Love For You", null),
 ('Une Presence', null),
 ('80s Power Ballads', null),
 ('A Collection of Roxette Hits! Their 20 Greatest Songs!', null),
@@ -131,7 +138,7 @@ INSERT INTO Album (nom, lienImage) VALUES
 ('Whiter Shade of Pale and More Million Sellers', null),
 ('Les années 80 en France', null),
 ('One Step Beyond', null),
-('T\'es OK, t\'es bath, t\'es In', null),
+("T'es OK, t'es bath, t'es In", null),
 ('Pour Me Comprendre (40 titres)', null),
 ('77/87', null),
 ('Les indispensables', null),
@@ -140,15 +147,15 @@ INSERT INTO Album (nom, lienImage) VALUES
 ('ABBA Gold', null),
 ('Poses', null),
 ('Spacer (Monsieur Willy Remix)', null),
-('Quand t\'es dans le désert', null),
+("Quand t'es dans le désert", null),
 ('Antisocial - Le Meilleur Des Années CBS', null),
 ('The Meilleur Of Renaud', null),
 ('Alors regarde', null),
 ('Les grands moments - Best Of', null),
 ('Best of Philippe Lafontaine (Le meilleur des années 80)', null),
 ('Besoin De Rien, Envie De Toi', null),
-('L\'essentiel', null),
-('Ma collection 80\'s: Hervé Cristiani', null),
+("L'essentiel", null),
+("Ma collection 80's: Hervé Cristiani", null),
 ('Quand la musique est bonne', null),
 ('Best Of Catherine Lara', null),
 ('Le son des années 80', null),
@@ -333,22 +340,25 @@ insert into Chanson(nom,dateSortie,duree,meilleurePlace,paroles,genre) Values
 ('Nuit magique', '1986', '04:36', 'Top 13 Hit-Parade', null, 'Variété française'),
 ('Quand la musique est bonne', '1982', '03:52', 'Top 1 Hit-Parade', null, 'Variété française / Pop rock'),
 ('Il est libre Max', '1981', '03:16', 'Top 105 Hit-Parade', null, 'Pop rock'),
-('T\'en va pas', '1986', '05:28', 'Top 1 Hit-Parade', null, 'Pop'),
+("T'en va pas", '1986', '05:28', 'Top 1 Hit-Parade', null, 'Pop'),
 ('Besoin de rien, envie de toi', '1958', '03:42', 'Top 1 Hit-Parade', null, 'Variété française'),
 ('Cœur de loup', '1988', '03:43', 'Top 1 Hit-Parade', null, 'Pop'),
 ('Les Lacs du Connemara', '1981', '06:01', 'Top 117 Hit-Parade', null, 'Variété française'),
 ('Place des grands hommes', '1989', '4:29', 'Top 4 Hit-Parade', null, 'Pop Rock'),
-('Marche à l\'ombre', '1980', '03:18', null, null, 'Variété française'),
+("Marche à l'ombre", '1980', '03:18', null, null, 'Variété française'),
 ('Antisocial', '1980', '05:09', 'Top 34 du Hit-Parade', null, 'Rock'),
-('Quand t\'es dans le désert', '1979', '03:55', null, null, 'Rock'),
+("Quand t'es dans le désert", '1979', '03:55', null, null, 'Rock'),
 ('Spacer', '1980', '03:57', 'Top 86 Hit-Parade', null, 'Pop'),
 ('Manuvera', '1979', '06:43', 'Top 82 Hit-Parade', null, 'Variété française / Pop'),
 ('Gimme! Gimme! Gimme! (A Man After Midnight)', '1979', '04:49', 'Top 2 Hit-Parade', null, 'Pop'),
 ('Fame', '1980', '05:16', 'Top 2 Hit-Parade', null, 'Pop'),
 ('La Mambo du décalco', '1982', '03:34', 'Top 28 Hit-Parade', null, 'Pop'),
 ('La Salsa du démon', '1980', '04:17', 'Top 42 Hit-Parade', null, 'Ska'),
-('L\'encre de tes yeux', '1980', '03:06', null, null, 'Variété française'),
+("L'encre de tes yeux", '1980', '03:06', null, null, 'Variété française'),
 ('La groupie du pianiste', '1980', '04:41', 'Top 17 Hit-Parade', null, 'Pop'),
-('T\'es OK, T\'es Bath, T\'es In', '1980', '03:22', null, null, 'R&B'),
+("T'es OK, T'es Bath, T'es In", '1980', '03:22', null, null, 'R&B'),
 ('One Step Beyond', '1979', '02:18', 'Top 1 Hit-Parade', null, 'Pop'),
 ('Tout simplement (tout doucement)', '1985', '04:10', 'Top 2 Hit-Parade', null, 'Variété française');
+
+insert into User(id, userLog, mdp) Values
+(0, "admin", "admin");
