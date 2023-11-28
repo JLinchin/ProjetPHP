@@ -2,7 +2,7 @@
 
 function mainControler($action) {
     $actions = array();
-    $actions["defaut"]      = "recherche.php";
+    $actions["defaut"]      = "detail.php";
     $actions["accueil"]     = "recherche.php";
     $actions["detail"]      = "detail.php";
     $actions["ajout"]       = "ajout.php";
