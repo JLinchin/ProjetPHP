@@ -55,7 +55,7 @@ public function getAlbumByTitre($titre){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from album where nom = :titre");
-        $req = bindValue(':titre', $titre, PDO::PARAM_INT);
+        $req = bindValue(':titre', $titre, PDO::PARAM_STR);
 
         $req->execute();
 
@@ -96,7 +96,7 @@ public function getAlbumByTitreChanson($titreC){
                                 FROM Album
                                 JOIN Chanson ON Album.id = Chanson.idAlbum
                                 WHERE Chanson.nom = :titre");
-        $req = bindValue(':titreC', $titreC, PDO::PARAM_INT);
+        $req = bindValue(':titreC', $titreC, PDO::PARAM_STR);
 
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -110,3 +110,51 @@ public function getAlbumByTitreChanson($titreC){
     return $unAlbum;
 }
 
+public function addAlbum($id, $nom, $lien){
+    try {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("insert into Album(id, nom, lienImage) values(:id, :nom, :lien)");
+        $req = bindValue(':id', $id, PDO::PARAM_INT);
+        $req = bindValue(':nom', $nom, PDO::PARAM_STR);
+        $req = bindValue(':lien', $lien, PDO::PARAM_STR);
+
+        $req->execute();
+    }
+    catch (PDOException $e)
+    {
+        print "Erreur ! :" . $e->getMessage();
+        die();
+    }
+}
+
+public function setAlbum($id, $nouveauNom, $nouveauLien)
+{
+    try {
+        $cnx = connexionPDO(); 
+
+        $req = $cnx->prepare("UPDATE Album SET nom = :nouveauNom, lienImage = :nouveauLien WHERE id = :id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->bindValue(':nouveauNom', $nouveauNom, PDO::PARAM_STR);
+        $req->bindValue(':nouveauLien', $nouveauLien, PDO::PARAM_STR);
+
+        $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur ! :" . $e->getMessage();
+        die();
+    }
+}
+
+public function deleteAlbum($id)
+{
+    try {
+        $cnx = connexionPDO(); 
+
+        $req = $cnx->prepare("DELETE FROM Album WHERE id = :id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+
+        $req->execute();
+    } catch (PDOException $e) {
+        print "Erreur ! :" . $e->getMessage();
+        die();
+    }
+}
