@@ -1,4 +1,5 @@
 <?php
+
 include_once "bd.inc.php";
 include_once "../Classes/Album.php";
 
@@ -96,7 +97,7 @@ function getAlbumByTitreChanson($titreC){
 
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $unAlbum = new Chanson($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
+        $unAlbum = new Album($ligne["id"], $ligne["nom"], $ligne["lienImage"]);
     }
     catch (PDOException $e)
     {

@@ -10,7 +10,7 @@ class Chanson{
     private $paroles;
     private $idAlbum;
 
-    public function Personne($id, $nom, $dateSortie, $genre, $duree, $meilleurePlace, $paroles, $idAlbum) 
+    public function __construct($id, $nom, $dateSortie, $genre, $duree, $meilleurePlace, $paroles, $idAlbum) 
     {
 	    $this->id = $id;
 	    $this->nom = $nom;

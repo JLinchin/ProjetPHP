@@ -360,9 +360,5 @@ insert into Chanson(nom,dateSortie,duree,meilleurePlace,paroles,genre) Values
 ('One Step Beyond', '1979', '02:18', 'Top 1 Hit-Parade', null, 'Pop'),
 ('Tout simplement (tout doucement)', '1985', '04:10', 'Top 2 Hit-Parade', null, 'Variété française');
 
-insert into User(idUser, userLog, mdp) Values
-(1, "admin", "admin");
-
-select * from album;
-
-insert into Album (nom, lienImage) values ("test", null);
+insert into User(id, userLog, mdp) Values
+(0, "admin", "admin");

@@ -1,10 +1,8 @@
 <?php
 
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
 
 include_once "bd.inc.php";
-include_once "$racine/classes/Chanson.php";
+include_once "../Classes/Chanson.php";
 
 function getChansons()
 {
@@ -40,7 +38,7 @@ function getChansonByIdC($idC)
     {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from chanson where id = :idC");
-        $req = bindValue(':idC', $idC, PDO::PARAM_INT);
+        $req->bindValue(':idC', $idC, PDO::PARAM_INT);
 
         $req->execute();
 
@@ -64,7 +62,7 @@ function getChansonByTitre($titre)
     {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from chanson where nom = :titre");
-        $req = bindValue(':titre', $titre, PDO::PARAM_INT);
+        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
 
         $req->execute();
 
