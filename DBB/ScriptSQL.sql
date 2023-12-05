@@ -31,7 +31,7 @@ create table Chanson
     dateSortie varchar(50),
     genre varchar(50),
     duree varchar(50),
-    meilleurePlace varchar(5),
+    meilleurePlace varchar(50),
     paroles varchar(5000),
     idAlbum int(4),
     foreign key (idAlbum) references Album(id)
@@ -57,7 +57,11 @@ create table Chanter
 
 create table User
 (
+<<<<<<< HEAD
     idUser int primary key,
+=======
+    idUser int(3) primary key,
+>>>>>>> origin/Test
     userLog varchar(30),
     mdp varchar(30)
 );
@@ -360,5 +364,7 @@ insert into Chanson(nom,dateSortie,duree,meilleurePlace,paroles,genre) Values
 ('One Step Beyond', '1979', '02:18', 'Top 1 Hit-Parade', null, 'Pop'),
 ('Tout simplement (tout doucement)', '1985', '04:10', 'Top 2 Hit-Parade', null, 'Variété française');
 
-insert into User(id, userLog, mdp) Values
+insert into User(idUser, userLog, mdp) Values
 (0, "admin", "admin");
+
+select * from Album;
