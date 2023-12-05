@@ -13,7 +13,7 @@ class Album
 
     public function __get($propriete) {
 	switch ($propriete) {
-		case 'id' : return $this->prenom; break;
+		case 'id' : return $this->id; break;
 		case "nom" : return $this->nom; break;
         case "lienImage" : return $this->lienImage; break;
 	    }
