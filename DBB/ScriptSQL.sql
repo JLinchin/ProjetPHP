@@ -57,15 +57,7 @@ create table Chanter
 
 create table User
 (
-<<<<<<< HEAD
-<<<<<<< HEAD
     idUser int primary key,
-=======
-    idUser int(3) primary key,
->>>>>>> origin/Test
-=======
-    idUser int primary key,
->>>>>>> 05e72453141128b9b4f11bb1f275478832172496
     userLog varchar(30),
     mdp varchar(30)
 );

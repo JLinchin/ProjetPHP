@@ -70,6 +70,7 @@
             $cnx = connexionPDO();
             $req = $cnx->prepare("Insert Into chanter Values (:idChanson, :idInterprete)");
             $req->bindValue(":idChanson", $uneChanson->__get("id"), PDO::PARAM_INT);
+            $req->bindValue(":idInterprete", $unInterprete->__get("id"), PDO::PARAM_INT);
             $req->execute();
         }
 
@@ -99,7 +100,7 @@
         }
     }
 
-    function delInterprete($uneChnason, $unInterprete)
+    function delInterprete($uneChanson, $unInterprete)
     {
         try
         {
