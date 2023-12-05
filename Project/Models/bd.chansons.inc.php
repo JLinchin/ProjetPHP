@@ -62,12 +62,17 @@ function getChansonByTitre($titre)
     {
         $cnx = connexionPDO();
 <<<<<<< HEAD
+<<<<<<< HEAD
         $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
         $req ->bindBalue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
 =======
         $req = $cnx->prepare("select * from chanson where nom = :titre");
         $req->bindValue(':titre', $titre, PDO::PARAM_STR);
 >>>>>>> origin/Test
+=======
+        $req = $cnx->prepare("select * from chanson where nom = :titre");
+        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
+>>>>>>> 05e72453141128b9b4f11bb1f275478832172496
 
         $req->execute();
 

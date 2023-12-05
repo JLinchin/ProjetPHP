@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="../js/bootstrap/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/recherche.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 =======
+=======
+>>>>>>> 05e72453141128b9b4f11bb1f275478832172496
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +20,10 @@
     <!--<script src="../js/bootstrap/bootstrap.min.js"></script>-->
     <script type="text/javascript" src="../js/scriptsR.js"></script>
 </head>
+<<<<<<< HEAD
 >>>>>>> origin/Test
+=======
+>>>>>>> 05e72453141128b9b4f11bb1f275478832172496
 <body>
 
 
