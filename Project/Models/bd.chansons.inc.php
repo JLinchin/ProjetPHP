@@ -62,7 +62,7 @@ function getChansonByTitre($titre)
     {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
-        $req ->bindBalue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
+        $req ->bindValue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
 
         $req->execute();
 
@@ -85,7 +85,7 @@ function addChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->("Insert Into Chanson Values(:id, :nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
+        $req = $cnx->prepare("Insert Into Chanson Values(:id, :nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
         $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
         $req->bindValue(':nom', $uneChanson->__get("nom"), PDO::PARAM_STR);
         $req->bindValue(':dateSortie', $uneChanson->__get("dateSortie"), PDO::PARAM_STR);
@@ -110,7 +110,7 @@ function majChanson($nouvChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->("Update Chanson Set nom = :nom, dateSortie = :dateSortie, genre = :genre, duree = :duree, meilleurePlace = :meilleurePlace, paroles = :paroles, idAlbum = :idAlbum Where id = :id");
+        $req = $cnx->prepare("Update Chanson Set nom = :nom, dateSortie = :dateSortie, genre = :genre, duree = :duree, meilleurePlace = :meilleurePlace, paroles = :paroles, idAlbum = :idAlbum Where id = :id");
         $req->bindValue(':nom', $nouvChanson->__get("nom"), PDO::PARAM_STR);
         $req->bindValue(':dateSortie', $nouvChanson->__get("dateSortie"), PDO::PARAM_STR);
         $req->bindValue(':genre', $nouvChanson->__get("genre"), PDO::PARAM_STR);
@@ -135,7 +135,7 @@ function delChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->("Delete From Chnason Where id = :id");
+        $req = $cnx->prepare("Delete From Chnason Where id = :id");
         $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
 
         $req->execute();
