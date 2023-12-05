@@ -5,20 +5,20 @@ use bdChansons;
 
 create table Album
 (
-	id int(4) auto_increment primary key,
+	id int auto_increment primary key,
     nom varchar(100),
     lienImage varchar(500)
 );
 
 create table Tag
 (
-	id int(4) primary key,
+	id int primary key,
     libelle varchar(50)
 );
 
 create table Interprete
 (
-	id int(4) auto_increment primary key,
+	id int auto_increment primary key,
     nom varchar(60),
     prenom varchar(60),
     nomScene varchar(60)
@@ -26,7 +26,7 @@ create table Interprete
 
 create table Chanson
 (
-	id int(4) auto_increment primary key,
+	id int auto_increment primary key,
     nom varchar(50),
     dateSortie varchar(50),
     genre varchar(50),
@@ -39,8 +39,8 @@ create table Chanson
 
 create table Tagger
 (
-	idChanson int(4),
-    idTag int(4),
+	idChanson int,
+    idTag int,
     primary key (idChanson, idTag),
     foreign key (idChanson) references Chanson(id),
     foreign key (idTag) references Tag(id)
@@ -48,8 +48,8 @@ create table Tagger
 
 create table Chanter
 (
-	idChanson int(4),
-    idInterprete int(4),
+	idChanson int,
+    idInterprete int,
     primary key (idChanson, idInterprete),
     foreign key (idChanson) references Chanson(id),
     foreign key (idInterprete) references Interprete(id)
@@ -57,7 +57,7 @@ create table Chanter
 
 create table User
 (
-    idUser int(3) primary key,
+    idUser int primary key,
     userLog varchar(30),
     mdp varchar(30)
 );
