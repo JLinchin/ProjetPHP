@@ -2,61 +2,55 @@
 <?php
 
 include_once "../Models/bd.inc.php";
+include_once "../Models/bd.Tag_Tagger.php";
 include_once "../Models/bd.chansons.inc.php";
 
-// Fonction pour afficher toutes les chansons
-    // $chansons = getChansons();
+//Fonction pour afficher toutes les tags
+    // $tags = getTags();
 
-    // if (!empty($chansons)) {
-    //     foreach ($chansons as $chanson) {
-    //         echo "ID: " . $chanson->__get("id") . "<br>";
-    //         echo "Nom: " . $chanson->__get("nom") . "<br>";
-    //         echo "Date de sortie: " . $chanson->__get("dateSortie") . "<br>";
-    //         echo "Genre: " . $chanson->__get("genre") . "<br>";
-    //         echo "Durée: " . $chanson->__get("duree") . "<br>";
-    //         echo "Meilleure place: " . $chanson->__get("meilleurPlace") . "<br>";
-    //         echo "Paroles: " . $chanson->__get("paroles") . "<br>";
-    //         echo "ID de l'album: " . $chanson->__get("idAlbum") . "<br>";
+    // if (!empty($tags)) {
+    //     foreach ($tags as $tag) {
+    //         echo "ID: " . $tag->__get("id") . "<br>";
+    //         echo "Libelle: " . $tag->__get("libelle") . "<br>";
     //         echo "-------------------------<br>";
     //     }
     // } else {
-    //     echo "Aucune chanson trouvée.";
+    //     echo "Aucun tag trouvé";
     // }
 
-    // Fonction pour afficher une chanson par ID
-    // $id = 50;
-    // $chanson = getChansonByIdC($id);
+//Afficher tout les Tags avec l'id :
+    // $id = 1;
+    // $tag = getTagByIdT($id);
 
-    // if ($chanson) {
-    //     echo "ID: " . $chanson->__get("id") . "<br>";
-    //     echo "Nom: " . $chanson->__get("nom") . "<br>";
-    //     echo "Date de sortie: " . $chanson->__get("dateSortie") . "<br>";
-    //     echo "Genre: " . $chanson->__get("genre") . "<br>";
-    //     echo "Durée: " . $chanson->__get("duree") . "<br>";
-    //     echo "Meilleure place: " . $chanson->__get("meilleurPlace") . "<br>";
-    //     echo "Paroles: " . $chanson->__get("paroles") . "<br>";
-    //     echo "ID de l'album: " . $chanson->__get("idAlbum") . "<br>";
+    // if ($tag) {
+    //     echo "ID: " . $tag->__get("id") . "<br>";
+    //     echo "Libelle: " . $tag->__get("libelle") . "<br>";
     //     echo "-------------------------<br>";
-    // } else {
-    //     echo "Aucune chanson trouvée avec l'ID spécifié.";
+    //     }
+    //  else {
+    //     echo "Aucun tag trouvé";
     // }
 
-    // Fonction pour afficher une chanson par titre
-    $titre = 'Au bout de mes rêves';
-    $chanson = getChansonByTitre($titre);
+// Afficher le tag avec l'id d'une chanson :
+        // $uneChanson = getChansonByIdC(1);
+        // $tag = getTagByChanson($uneChanson);
 
-    if ($chanson) {
-        echo "ID: " . $chanson->__get("id") . "<br>";
-        echo "Nom: " . $chanson->__get("nom") . "<br>";
-        echo "Date de sortie: " . $chanson->__get("dateSortie") . "<br>";
-        echo "Genre: " . $chanson->__get("genre") . "<br>";
-        echo "Durée: " . $chanson->__get("duree") . "<br>";
-        echo "Meilleure place: " . $chanson->__get("meilleurPlace") . "<br>";
-        echo "Paroles: " . $chanson->__get("paroles") . "<br>";
-        echo "ID de l'album: " . $chanson->__get("idAlbum") . "<br>";
-        echo "-------------------------<br>";
-    } else {
-        echo "Aucune chanson trouvée avec le titre spécifié.";
-    }
+        // if ($tag) {
+        //         echo "ID: " . $tag->__get("id") . "<br>";
+        //         echo "Libelle: " . $tag->__get("libelle") . "<br>";
+        //         echo "-------------------------<br>";
+        //         }
+        //      else {
+        //         echo "Aucun tag trouvé";
+        //      }
 
+// Ajouter un nouveau Tag : 
+
+    $unTag = getTagByIdT(1);
+    $uneChanson = getChansonByIdC(3);
+    $nouveauTag = getTagByIdT(3);
+
+    //AddTag($unTag, $uneChanson);
+    MajTag($unTag, $nouveauTag, $uneChanson);
+    //SupprimerTag($unTag, $uneChanson);
 ?>
