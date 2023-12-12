@@ -32,7 +32,7 @@ function getAlbumById($idA){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from album where id = :idA");
-        $req->bindValue(':idA', $idA, PDO::PARAM_INT);
+        $req -> bindValue(':idA', $idA, PDO::PARAM_INT);
 
         $req->execute();
 
@@ -52,7 +52,7 @@ function getAlbumByTitre($titre){
     try {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from album where nom = :titre");
-        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
+        $req -> bindValue(':titre', $titre, PDO::PARAM_STR);
 
         $req->execute();
 
@@ -71,8 +71,8 @@ function getAlbumByTitre($titre){
 function getAlbumByIdChanson($idChanson){
     try{
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from album a inner join chanson c on a.id = c.idAlbum where c.id = :idChanson");
-        $req->bindValue(':idChanson', $idChanson, PDO::PARAM_INT);
+        $req = $cnx->prepare("select * from album inner join chanson on id = idAlbum where id = :idChanson");
+        $req -> bindValue(':idChanson', $idChanson, PDO::PARAM_INT);
 
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -93,7 +93,7 @@ function getAlbumByTitreChanson($titreC){
                                 FROM Album
                                 JOIN Chanson ON Album.id = Chanson.idAlbum
                                 WHERE Chanson.nom = :titre");
-        $req = bindValue(':titreC', $titreC, PDO::PARAM_STR);
+        $req -> bindValue(':titreC', $titreC, PDO::PARAM_STR);
 
         $req->execute();
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -105,6 +105,27 @@ function getAlbumByTitreChanson($titreC){
         die();
     }
     return $unAlbum;
+}
+
+function getImageByChanson($idChanson)
+{
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select lienImage from Album a inner join Chanson c on a.id = c.idAlbum where c.id = :id");
+        $req -> bindValue(":id", $idChanson, PDO::PARAM_INT);
+
+        $req -> execute();
+        $lien = $req->fetch(PDO::FETCH_ASSOC);
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur ! :" . $e->getMessage();
+        die();
+    }
+
+    return $lien;
 }
 
 function addAlbum($id, $nom, $lien){

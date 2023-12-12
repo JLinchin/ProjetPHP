@@ -61,9 +61,10 @@ function getChansonByTitre($titre)
     try
     {
         $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
+        $req -> bindValue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
         $req = $cnx->prepare("select * from chanson where nom = :titre");
-        $req -> bindValue(':titre', $titre, PDO::PARAM_INT);
-
+        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -135,7 +136,7 @@ function delChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("Delete From Chanson Where id = :id");
+        $req = $cnx->prepare("Delete From Chnason Where id = :id");
         $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
 
         $req->execute();
