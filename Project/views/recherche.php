@@ -3,6 +3,7 @@
 <script src="../js/bootstrap/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/recherche.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <body>
     <!--Barre de recherche-->
     <div class="container h-100">
@@ -13,4 +14,5 @@
           </div>
         </div>
       </div>
+      <iframe src="pageAcceuil.php" width="600" height="400" frameborder="0"></iframe>
 </body>

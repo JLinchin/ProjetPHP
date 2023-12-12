@@ -20,6 +20,7 @@ include_once "../Models/bd.chansons.inc.php";
 
 //Afficher tout les Tags avec l'id :
     // $id = 1;
+    
     // $tag = getTagByIdT($id);
 
     // if ($tag) {
