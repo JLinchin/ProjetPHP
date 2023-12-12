@@ -57,9 +57,11 @@ create table Chanter
 
 create table User
 (
-    idUser int primary key,
+    idUser int primary key auto_increment,
     userLog varchar(30),
-    mdp varchar(30)
+    mdp varchar(30),
+    nom varchar(50),
+    prenom varchar(50)
 );
 
 INSERT INTO Album (nom, lienImage) VALUES 
