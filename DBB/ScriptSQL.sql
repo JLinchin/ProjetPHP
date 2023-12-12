@@ -362,3 +362,5 @@ insert into Chanson(nom,dateSortie,duree,meilleurePlace,paroles,genre) Values
 
 insert into User(id, userLog, mdp) Values
 (0, "admin", "admin");
+
+select * from interprete;
