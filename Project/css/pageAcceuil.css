@@ -52,6 +52,25 @@
     width: 150px; /* Assure que l'image occupe toute la largeur du conteneur */
     transition: transform 0.5s;
 }
+.child:hover img {
+    filter: brightness(50%); /* Assombrit l'image au survol */
+  }
+  
+  .child::after {
+    content: attr(data-title);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transition: filter 0.5s;
+  }
+  
+  .child:hover::after {
+    opacity: 1;
+  }
 
 /*.child img, .child > svg {
     position: absolute;
