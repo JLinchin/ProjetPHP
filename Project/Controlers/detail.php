@@ -11,7 +11,7 @@ include_once "$racine/models/bd.chansons.inc.php";
 $idC = $_GET["idC"];
 
 $uneChanson = getChansonByIdC($idC);
-$uneImage = getImageByIdC($idC);
+//$uneImage = getImageByIdC($idC);
 
 $titre = $uneChanson->__get("nom");
 include "$racine/vue/entete.php";
