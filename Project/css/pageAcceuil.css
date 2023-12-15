@@ -1,6 +1,7 @@
 .container{
     height: 50vh;
     width: 100vw;
+    background-color: red;
 }
 
 
@@ -9,6 +10,7 @@
     padding: 0px 30px;
     margin-top: 100px;
     display: flex;
+    background-color: yellow;
 }
 
 .left {
@@ -16,6 +18,7 @@
     left: 0;
     top: 50%;
     transform: translateY(-50%);
+    background-color: orange;
 }
 
 .right {
@@ -23,12 +26,14 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    background-color: orange;
+
 }
 
 .scroll-images {
     position: relative;
     width: 100%;
-    padding: 40px 0px;
+    padding: 60px 0px;
     height: auto;
     display: flex;
     flex-wrap: nowrap;
@@ -36,41 +41,46 @@
     overflow-y: hidden;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    background-color: rebeccapurple;
 }
 
-.child img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
+.child {
+ /* Ajout de position relative pour positionner les éléments enfants par rapport à celui-ci */
+    height: 200px;
+    width: 800px;
     margin: 1px 10px;
     border: 1px solid #f1f1f1;
     overflow: hidden;
-    -webkit-box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%);;
-    box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%);;
+    -webkit-box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%);
+    box-shadow: 0px 0px 15px 2px rgb(0 0 0 / 10%);
     transition: transform 0.5s; /* Ajoute une transition fluide */
-    width: 150px; /* Assure que l'image occupe toute la largeur du conteneur */
-    transition: transform 0.5s;
+    
+    background-image: url(../ImageAlbum/10.HuntingHighAndLow.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: filter 0.5s; /* Ajoute une transition pour l'effet d'assombrissement */
+
 }
-.child:hover img {
-    filter: brightness(50%); /* Assombrit l'image au survol */
-  }
-  
-  .child::after {
-    content: attr(data-title);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 20px;
+
+.child p {
     opacity: 0;
-    transition: filter 0.5s;
-  }
-  
-  .child:hover::after {
+}
+
+.child:hover p{
     opacity: 1;
-  }
+    color: white;
+}
+
+.child:hover{
+    filter: brightness(50%); /* Assombrit l'image au survol */
+}
+.child:hover::after {
+    opacity: 1;
+}
 
 /*.child img, .child > svg {
     position: absolute;

@@ -21,32 +21,32 @@
       <i class="fas fa-angle-double-left"></i>
     </button>
     <div class="scroll-images">
-      <div class="child" data-title="Nom de la chanson 1">
-        <img src="../Images/3.Gang.jpg"></img>
+      <div class="child">
+        <p>titre</p>   
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
       <div class="child">
-        <img src="../Images/3.Gang.jpg"></img>
+      <p>titre</p>  
       </div>
     </div>
     <button class="right" onclick="rightScroll()">
