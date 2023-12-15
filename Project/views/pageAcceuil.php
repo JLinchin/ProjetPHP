@@ -22,30 +22,39 @@
     </button>
     <div class="scroll-images">
       <div class="child">
+        <img src="../Images/3.gang.jpg">
         <p>titre</p>   
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
+      <img src="../Images/3.gang.jpg">
       <p>titre</p>  
       </div>
     </div>
