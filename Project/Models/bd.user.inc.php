@@ -35,7 +35,7 @@
             $cnx = connexionPDO();
             $req = $cnx->prepare("select nom, prenom from User where userLog = :login and mdp = :mdp");
             $req->bindValue(":login", $login, PDO::PARAM_STR);
-            $req->bindValue(":mdp", hash("sha256", $mdp), PDO::PARAM_STR);
+            $req->bindValue(":mdp", $mdp, PDO::PARAM_STR);
 
             $req->execute();
             $user = $req->fetch(PDO::FETCH_ASSOC);
@@ -63,8 +63,6 @@
             $req->bindValue(":prenom", $unUser->getPrenom(), PDO::PARAM_STR);
 
             $req->execute();
-            $user = $req->fetch(PDO::FETCH_ASSOC);
-            $unUser = new Utilisateur($user["nom"], $user["prenom"]);
         }
 
         catch(PDOException $e)
@@ -72,6 +70,4 @@
             print "Erreur ! :" . $e->getMessage();
             die();
         }
-
-        return $unUser;
     }
