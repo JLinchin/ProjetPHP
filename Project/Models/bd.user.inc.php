@@ -1,7 +1,10 @@
 <?php
 
+    if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
+    $racine = "..";
+
     include_once "bd.inc.php";
-    include_once "Classes/Utilisateur.php";
+    include_once "$racine/Classes/Utilisateur.php";
 
     function getUser($login, $mdp)
     {
@@ -10,7 +13,7 @@
             $cnx = connexionPDO();
             $req = $cnx->prepare("select count(*) from User where userLog = :login and mdp = :mdp");
             $req->bindValue(":login", $login, PDO::PARAM_STR);
-            $req->bindValue(":mdp", hash("sha256", $mdp), PDO::PARAM_STR);
+            $req->bindValue(":mdp", $mdp, PDO::PARAM_STR);
 
             $req->execute();
             $nbUser = $req->fetch(PDO::FETCH_ASSOC);
@@ -32,7 +35,7 @@
             $cnx = connexionPDO();
             $req = $cnx->prepare("select nom, prenom from User where userLog = :login and mdp = :mdp");
             $req->bindValue(":login", $login, PDO::PARAM_STR);
-            $req->bindValue(":mdp", hash("sha256", $mdp), PDO::PARAM_STR);
+            $req->bindValue(":mdp", $mdp, PDO::PARAM_STR);
 
             $req->execute();
             $user = $req->fetch(PDO::FETCH_ASSOC);
@@ -60,8 +63,6 @@
             $req->bindValue(":prenom", $unUser->getPrenom(), PDO::PARAM_STR);
 
             $req->execute();
-            $user = $req->fetch(PDO::FETCH_ASSOC);
-            $unUser = new Utilisateur($user["nom"], $user["prenom"]);
         }
 
         catch(PDOException $e)
@@ -69,6 +70,4 @@
             print "Erreur ! :" . $e->getMessage();
             die();
         }
-
-        return $unUser;
     }
