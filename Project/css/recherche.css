@@ -3,9 +3,14 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #FFAF90 !important;
+    background-image: url(../ImageAlbum/5788961.jpg);
 }
-
+h1{
+    font-size: 62px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 40px;
+}
 .searchbar {
     margin-bottom: auto;
     margin-top: auto;

@@ -26,5 +26,4 @@
             </ul>
         </nav>
     </head>
-
     <body>
