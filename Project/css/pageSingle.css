@@ -10,9 +10,13 @@ body{
 }
 
 .single {
+    background-color: #fff17c;
     margin-left: 60px;
     margin-top: 60px;
     margin-right: 60px;
+    height: 600px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .titreSingle{
@@ -58,7 +62,7 @@ body{
     border-radius: 10px;
     display: flex;
     margin-right: 42px;
-    background: #90E0FF;
+    background-color: #24ccfd;
     padding: 12px;
     overflow-y: auto; /* Ajoutez cette ligne pour activer la barre de défilement vertical */
     padding-bottom: 10px;
