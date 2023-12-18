@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="../js/bootstrap/bootstrap.min.js"></script>
-<link rel="stylesheet" href="../css/ajouterChanson.css">
+
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/ajouterChanson.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body>
           
@@ -16,5 +16,5 @@
             </form>
           </div>
           
-          <img class="jaquette" src="../../Project/Assets/Jaquette.jpg" />
+          <img class="jaquette" src="Assets/Jaquette.jpg" />
 </body>

@@ -6,7 +6,7 @@
         private $prenom;
         private $nomScene;
 
-        public function Interprete($id, $nom, $prenom, $nomScene)
+        public function __construct($id, $nom, $prenom, $nomScene)
         {
             $this->id = $id;
             $this->nom = $nom;

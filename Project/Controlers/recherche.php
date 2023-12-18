@@ -1,5 +1,8 @@
 <?php
-include_once "../Models/bd.inc.php";
+
+if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
+    $racine = "..";
+include_once "$racine/Models/bd.inc.php";
 
 if (isset($_POST['zoneRecherche'])) {
     $zoneRecherche = $_POST['zoneRecherche'];
@@ -31,8 +34,9 @@ if (isset($_POST['zoneRecherche'])) {
         echo "Error: " . $e->getMessage();
     }
 } else {
-    include_once "../views/entete.php";
-    include_once "../views/recherche.php";
-    include_once "../views/enpied.php";
+    include_once "$racine/views/entete.php";
+    include_once "$racine/views/recherche.php";
+    include_once "$racine/views/pageAcceuil.php";
+    include_once "$racine/views/enpied.php";
 }
 ?>

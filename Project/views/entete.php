@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 
+<?php
+?>
 <html>
     <head>
-        <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="../css/entete.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <link rel="stylesheet" href="css/entete.css">
         <title>Le meilleur des années 80</title>
 
         <nav class="main-navigation">
             <div class="navbar-header animated fadeInUp">
-                <img class="logo" src="../Assets/Logo.png">
+                <img class="logo" src="Assets/Logo-modified.png">
             </div>
             <ul class="nav-list">
                 <li class="nav-list-item">
-                    <a href="#" class="nav-link">Accueil</a>
+                    <a href= "./?action=recherche" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="#" class="nav-link">Ajouter Chanson</a>
+                    <a href="./?action=ajout" class="nav-link">Ajouter Chanson</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="#" class="nav-link">Connexion</a>
+                    <a href="./?action=connexion" class="nav-link">Connexion</a>
                 </li>
             </ul>
         </nav>
     </head>
-
     <body>
