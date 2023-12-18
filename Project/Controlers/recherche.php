@@ -33,17 +33,11 @@ if (isset($_POST['zoneRecherche'])) {
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
-<<<<<<< HEAD
-}
-    include_once "../views/entete.php";
-    include_once "../views/recherche.php";
-    include_once "../views/enpied.php";
-=======
+
 } else {
     include_once "$racine/views/entete.php";
     include_once "$racine/views/recherche.php";
     include_once "$racine/views/pageAcceuil.php";
     include_once "$racine/views/enpied.php";
 }
->>>>>>> main
 ?>
