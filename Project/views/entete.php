@@ -10,7 +10,7 @@
 
         <nav class="main-navigation">
             <div class="navbar-header animated fadeInUp">
-                <img class="logo" src="Assets/Logo.png">
+                <img class="logo" src="Assets/Logo-modified.png">
             </div>
             <ul class="nav-list">
                 <li class="nav-list-item">
