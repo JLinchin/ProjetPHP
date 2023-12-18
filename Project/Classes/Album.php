@@ -5,15 +5,15 @@ class Album
     private $nom;
     private $lienImage;
 
-    public function Personne($id, $nom,$lienImage) {
-	$this->id = $id;
-	$this->nom = $nom;
-    $this->lienImage = $lienImage;
-    }
+    public function __construct($id, $nom,$lienImage) {
+		$this->id = $id;
+		$this->nom = $nom;
+		$this->lienImage = $lienImage;
+	}
 
     public function __get($propriete) {
 	switch ($propriete) {
-		case 'id' : return $this->prenom; break;
+		case 'id' : return $this->id; break;
 		case "nom" : return $this->nom; break;
         case "lienImage" : return $this->lienImage; break;
 	    }
