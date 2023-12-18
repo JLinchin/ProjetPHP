@@ -1,7 +1,7 @@
 <?php
 
     include_once "bd.inc.php";
-    include_once "../Classes/Utilisateur.php";
+    include_once "Classes/Utilisateur.php";
 
     function getUser($login, $mdp)
     {

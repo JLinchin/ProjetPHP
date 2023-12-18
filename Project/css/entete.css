@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #FFAF90;
+    background-color: black;
 }
 
 .logo {
@@ -13,7 +13,7 @@ body {
 
 nav.main-navigation {
     position: relative;
-    background-color: #FEDFBE;
+    background-color: black;
     height: 100px;
 }
 
@@ -41,7 +41,7 @@ a.nav-link {
     font-weight: 500;
     cursor: pointer;
     position: relative;
-    color: #404040;
+    color: white;
 }
 
 @keyframes FadeIn {
@@ -140,3 +140,4 @@ a.nav-link {
     transition: 0.3s;
     scale: 1.2;
 }
+
