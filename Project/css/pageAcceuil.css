@@ -38,11 +38,13 @@
     -webkit-overflow-scrolling: touch;
 }
 .child p {
-    display: none;
+    opacity: 0;
 }
 .child:hover p {
-    display: contents; /* Fait apparaître le paragraphe lors du survol */
-    color: white; /* Ajoute une couleur de texte */
+   opacity: 1;
+    color: black; /* Ajoute une couleur de texte */
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .child img {
