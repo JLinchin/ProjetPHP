@@ -2,8 +2,8 @@
 
 class Utilisateur
 {
-    private string $nom;
-    private string $prenom;
+    private $nom;
+    private $prenom;
 
     public function __construct($nom,$prenom)
     {
