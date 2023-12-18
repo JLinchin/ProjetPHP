@@ -40,6 +40,10 @@
 .child p {
     display: none;
 }
+.child:hover p {
+    display: contents; /* Fait apparaître le paragraphe lors du survol */
+    color: white; /* Ajoute une couleur de texte */
+}
 
 .child img {
     display: flex;
@@ -59,10 +63,6 @@
     filter: brightness(50%); /* Assombrit l'image au survol */
   }
 
-  .child:hover p {
-    display: contents; /* Fait apparaître le paragraphe lors du survol */
-    color: white; /* Ajoute une couleur de texte */
-}
   
   .child::after {
     content: attr(data-title);
