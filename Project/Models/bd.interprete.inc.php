@@ -4,7 +4,7 @@
     $racine = "..";
 
     include_once "bd.inc.php";
-    include_once "$racine/classes/Interprete.php";
+    include_once "Classes/Interprete.php";
 
     function getInterpretes()
     {
@@ -31,6 +31,27 @@
         }
     
         return $lesInterpretes;
+    }
+
+    function getInterpretesByNom($nom)
+    {
+        try
+        {
+            $cnx = connexionPDO();
+            $req = $cnx->prepare("select count(*) from interprete where nomScene = :nomScene");
+            $req->bindValue(":nomScene", $nom, PDO::PARAM_STR);
+            $req->execute();
+
+            $ligne = $req->fetchColumn(PDO::FETCH_ASSOC);
+        }
+
+        catch (PDOException $e)
+        {
+            print "Erreur ! :" . $e->getMessage();
+            die();
+        }
+    
+        return $ligne;
     }
 
     function getInterpreteById($idInterp)
@@ -60,10 +81,7 @@
         try
         {
             $cnx = connexionPDO();
-            $req = $cnx->prepare("Insert Into Interprete Values (:id, :nom, :prenom, :nomScene)");
-            $req->bindValue(':id', $unInterprete->__get("id"), PDO::PARAM_INT);
-            $req->bindValue(':nom', $unInterprete->__get("nom"), PDO::PARAM_STR);
-            $req->bindValue(':prenom', $unInterprete->__get("prenom"), PDO::PARAM_STR);
+            $req = $cnx->prepare("Insert Into Interprete Values (:nomScene)");
             $req->bindValue(':nomScene', $unInterprete->__get("nomScene"), PDO::PARAM_STR);
             $req->execute();
         }
