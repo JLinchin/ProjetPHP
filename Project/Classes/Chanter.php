@@ -4,7 +4,7 @@
         private $idChanson;
         private $idInterprete;
 
-        public function Chanter($idChanson, $idInterprete)
+        public function __construct($idChanson, $idInterprete)
         {
             $this->idChanson    = $idChanson;
             $this->idInterprete = $idInterprete;

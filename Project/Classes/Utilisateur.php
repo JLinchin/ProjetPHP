@@ -4,31 +4,35 @@ class Utilisateur
 {
     private string $nom;
     private string $prenom;
-    private string $login;
-    private string $mdp;
 
-    public function __construct($nom,$prenom,$login,$mdp)
+    public function __construct($nom,$prenom)
     {
         $this->nom=$nom;
         $this->prenom=$prenom;
-        $this->login=$login;
-        $this->mdp=$mdp;
     }
+
     public function getNom()
     {
         return $this->nom;
     }
+    
     public function getPrenom()
     {
         return $this->prenom;
     }
-    public function getLogin()
+
+    public function __set($param, $value)
     {
-        return $this->login;
-    }
-    public function getMdp()
-    {
-        return $this->mdp;
+        switch ($param)
+        {
+            case "nom":
+                $this->nom = $value;
+                break;
+
+            case "prenom":
+                $this->prenom = $value;
+                break;
+        }
     }
 }
 

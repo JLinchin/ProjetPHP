@@ -1,12 +1,9 @@
 <?php
 
-    if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
-
     include_once "bd.inc.php";
-    include_once "$racine/classes/Chanson.php";
-    include_once "$racine/classes/Chanter.php";
-    include_once "$racine/classes/Interprete.php";
+    include_once "../Classes/Chanson.php";
+    include_once "../Classes/Chanter.php";
+    include_once "../Classes/Interprete.php";
 
     function getChanter()
     {
@@ -70,6 +67,7 @@
             $cnx = connexionPDO();
             $req = $cnx->prepare("Insert Into chanter Values (:idChanson, :idInterprete)");
             $req->bindValue(":idChanson", $uneChanson->__get("id"), PDO::PARAM_INT);
+            $req->bindValue(":idInterprete", $unInterprete->__get("id"), PDO::PARAM_INT);
             $req->execute();
         }
 
@@ -99,7 +97,7 @@
         }
     }
 
-    function delInterprete($uneChnason, $unInterprete)
+    function delInterprete($uneChanson, $unInterprete)
     {
         try
         {

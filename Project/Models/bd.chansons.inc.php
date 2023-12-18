@@ -2,7 +2,7 @@
 
 
 include_once "bd.inc.php";
-include_once "../Classes/Chanson.php";
+include_once "/Classes/Chanson.php";
 
 function getChansons()
 {
@@ -61,9 +61,10 @@ function getChansonByTitre($titre)
     try
     {
         $cnx = connexionPDO();
-
         $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
         $req ->bindBalue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
+        $req = $cnx->prepare("select * from chanson where nom = :titre");
+        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
 
         $req->execute();
 

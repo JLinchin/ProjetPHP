@@ -1,10 +1,7 @@
 <?php
 
-    if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
-
     include_once "bd.inc.php";
-    include_once "$racine/classes/Interprete.php";
+    include_once "../Classes/Interprete.php";
 
     function getInterpretes()
     {
@@ -39,7 +36,8 @@
         {
             $cnx = connexionPDO();
             $req = $cnx->prepare("select * from interprete where id = :id");
-            $req->bindValue(':id', $id, PDO::PARAM_INT);
+            $req->bindValue(':id', $idInterp, PDO::PARAM_INT);
+
             $req->execute();
 
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -52,7 +50,7 @@
             die();
         }
 
-        return $unInterprete
+        return $unInterprete;
     }
 
     function addInterprete($unInterprete)
