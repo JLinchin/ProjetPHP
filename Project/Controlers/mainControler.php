@@ -5,9 +5,9 @@ function mainControler($action) {
     $actions["defaut"]      = "recherche.php";
     $actions["accueil"]     = "recherche.php";
     $actions["detail"]      = "detail.php";
-    $actions["ajout"]       = "ajout.php";
+    $actions["ajout"]       = "ajouterChansonContro.php";
     $actions["modif"]       = "ajout.php";
-    $actions["connexion"]   = "connexion.php";
+    $actions["connexion"]   = "connexionContro.php";
     $actions["deconnexion"] = "deconnexion.php";
 
     if (array_key_exists($action, $actions)) {

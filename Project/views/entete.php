@@ -5,14 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <style type="text/css">
-            @import url("css/ajouterChanson.css");
-            @import url("css/Connexion.css");
-            @import url("css/entete.css");
-            @import url("css/pageSingle.css");
-            @import url("css/Recherche.css");
-            @import url("css/bootstrap/bootstrap.min.css");
-        </style>
+        <link rel="stylesheet" href="css/entete.css">
         <title>Le meilleur des années 80</title>
 
         <nav class="main-navigation">
@@ -24,10 +17,10 @@
                     <a href= "./?action=recherche" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="views/ajouterChanson" class="nav-link">Ajouter Chanson</a>
+                    <a href="./?action=ajout" class="nav-link">Ajouter Chanson</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="views/Connexion" class="nav-link">Connexion</a>
+                    <a href="./?action=connexion" class="nav-link">Connexion</a>
                 </li>
             </ul>
         </nav>

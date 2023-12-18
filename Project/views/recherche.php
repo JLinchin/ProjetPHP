@@ -1,4 +1,6 @@
     <!--Barre de recherche-->
+    <link rel="stylesheet" href="css/recherche.css">
+    <link rel="stylesheet" href=" css/bootstrap/bootstrap.min.css">
     <div class="container h-100">
         <div class="d-flex justify-content-center h-25">
           <div class="searchbar">
