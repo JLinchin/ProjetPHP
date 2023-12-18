@@ -24,15 +24,7 @@
         <p>titre</p>   
       </div>
       <div class="child">
-      <img src="../Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="../Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="../Images/3.gang.jpg">
+      <img src="Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
@@ -40,19 +32,27 @@
       <p>titre</p>  
       </div>
       <div class="child">
-      <img src="../Images/3.gang.jpg">
+      <img src="Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
-      <img src="../Images/3.gang.jpg">
+      <img src="Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
-      <img src="../Images/3.gang.jpg">
+      <img src="Images/3.gang.jpg">
       <p>titre</p>  
       </div>
       <div class="child">
-      <img src="../Images/3.gang.jpg">
+      <img src="Images/3.gang.jpg">
+      <p>titre</p>  
+      </div>
+      <div class="child">
+      <img src="Images/3.gang.jpg">
+      <p>titre</p>  
+      </div>
+      <div class="child">
+      <img src="Images/3.gang.jpg">
       <p>titre</p>  
       </div>
     </div>

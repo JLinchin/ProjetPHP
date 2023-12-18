@@ -1,7 +1,7 @@
 <?php
 
 include_once "bd.inc.php";
-include_once "../Classes/Album.php";
+include_once "Classes/Album.php";
 
 function getAlbum(){
     $lesAlbums = array();
