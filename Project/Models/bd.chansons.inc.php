@@ -2,7 +2,7 @@
 
 
 include_once "bd.inc.php";
-include_once "../Classes/Chanson.php";
+include_once "Classes/Chanson.php";
 
 function getChansons()
 {
