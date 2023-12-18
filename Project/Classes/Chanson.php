@@ -10,7 +10,7 @@ class Chanson{
     private $paroles;
     private $idAlbum;
 
-    public function Personne($id, $nom, $dateSortie, $genre, $duree, $meilleurePlace, $paroles, $idAlbum) 
+    public function __construct($id, $nom, $dateSortie, $genre, $duree, $meilleurePlace, $paroles, $idAlbum) 
     {
 	    $this->id = $id;
 	    $this->nom = $nom;
@@ -29,7 +29,7 @@ class Chanson{
             case "dateSortie" : return $this->dateSortie; break;
             case "genre" : return $this->genre; break;
             case "duree" : return $this->duree; break;
-            case "meilleurPlace" : return $this->meilleurePlace; break;
+            case "meilleurePlace" : return $this->meilleurePlace; break;
             case "paroles" : return $this->paroles; break;
             case "idAlbum" : return $this->idAlbum; break;
         }
@@ -42,7 +42,7 @@ class Chanson{
             case "dateSortie" : $this->dateSortie= $value;break;
             case "genre" : $this->genre = $value;break;
             case "duree" : $this->duree = $value; break;
-            case "meilleurPlace" : $this->meilleurePlace = $value;break;
+            case "meilleurePlace" : $this->meilleurePlace = $value;break;
             case "paroles" : $this->paroles = $value; break;
             case "idAlbum" : $this->idAlbum = $value;break;
         }

@@ -1,14 +1,12 @@
 <?php
 
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
 
 include_once "bd.inc.php";
-include_once "$racine/classes/Chanson.php";
+include_once "Classes/Chanson.php";
 
 function getChansons()
 {
-    $lesChnasons = array();
+    $lesChansons = array();
     try
     {
         $cnx = connexionPDO();
@@ -19,7 +17,7 @@ function getChansons()
         while ($ligne)
         {
             $uneChanson = new Chanson($ligne["id"], $ligne["nom"], $ligne["dateSortie"], $ligne["genre"], $ligne["duree"], $ligne["meilleurePlace"], $ligne["paroles"], $ligne["idAlbum"]);
-            $lesChnasons[] = $uneChanson;
+            $lesChansons[] = $uneChanson;
             $ligne = $req->fetch(PDO::FETCH_ASSOC);
         }
     }
@@ -30,7 +28,7 @@ function getChansons()
         die();
     }
 
-    return $lesChnasons;
+    return $lesChansons;
 }
 
 
@@ -40,7 +38,7 @@ function getChansonByIdC($idC)
     {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from chanson where id = :idC");
-        $req = bindValue(':idC', $idC, PDO::PARAM_INT);
+        $req->bindValue(':idC', $idC, PDO::PARAM_INT);
 
         $req->execute();
 
@@ -63,8 +61,10 @@ function getChansonByTitre($titre)
     try
     {
         $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
+        $req ->bindBalue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
         $req = $cnx->prepare("select * from chanson where nom = :titre");
-        $req = bindValue(':titre', $titre, PDO::PARAM_INT);
+        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
 
         $req->execute();
 
@@ -81,4 +81,71 @@ function getChansonByTitre($titre)
     return $uneChanson;
 }
 
-?>
+
+function addChanson($uneChanson)
+{
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("Insert Into Chanson Values(:id, :nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
+        $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
+        $req->bindValue(':nom', $uneChanson->__get("nom"), PDO::PARAM_STR);
+        $req->bindValue(':dateSortie', $uneChanson->__get("dateSortie"), PDO::PARAM_STR);
+        $req->bindValue(':genre', $uneChanson->__get("genre"), PDO::PARAM_STR);
+        $req->bindValue(':duree', $uneChanson->__get("duree"), PDO::PARAM_STR);
+        $req->bindValue(':meilleurePlace', $uneChanson->__get("meilleurePlace"), PDO::PARAM_STR);
+        $req->bindValue(':paroles', $uneChanson->__get("paroles"), PDO::PARAM_STR);
+        $req->bindValue(':idAlbum', $uneChanson->__get("idAlbum"), PDO::PARAM_INT);
+
+        $req->execute();
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+}
+
+function majChanson($nouvChanson)
+{
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("Update Chanson Set nom = :nom, dateSortie = :dateSortie, genre = :genre, duree = :duree, meilleurePlace = :meilleurePlace, paroles = :paroles, idAlbum = :idAlbum Where id = :id");
+        $req->bindValue(':nom', $nouvChanson->__get("nom"), PDO::PARAM_STR);
+        $req->bindValue(':dateSortie', $nouvChanson->__get("dateSortie"), PDO::PARAM_STR);
+        $req->bindValue(':genre', $nouvChanson->__get("genre"), PDO::PARAM_STR);
+        $req->bindValue(':duree', $nouvChanson->__get("duree"), PDO::PARAM_STR);
+        $req->bindValue(':meilleurePlace', $nouvChanson->__get("meilleurePlace"), PDO::PARAM_STR);
+        $req->bindValue(':paroles', $nouvChanson->__get("paroles"), PDO::PARAM_STR);
+        $req->bindValue(':idAlbum', $nouvChanson->__get("idAlbum"), PDO::PARAM_INT);
+        $req->bindValue(':id', $nouvChanson->__get("id"), PDO::PARAM_INT);
+
+        $req->execute();
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+}
+
+function delChanson($uneChanson)
+{
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("Delete From Chnason Where id = :id");
+        $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
+
+        $req->execute();
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+}
