@@ -23,7 +23,7 @@
                     <a href="./?action=ajoutA" class="nav-link">Ajouter Album</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="./?action=connexion" class="nav-link">Connexion</a>
+                    <a href="./?action=connexion" class="nav-link">Connexion | Inscription</a>
                 </li>
             </ul>
         </nav>
