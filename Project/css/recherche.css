@@ -19,7 +19,7 @@ h1{
     color: rgb(189, 189, 189);
 }
 .searchbar {
-    margin-bottom: auto;
+    margin-bottom: 160px;
     margin-top: auto;
     height: 60px;
     background-color: #fff17c;

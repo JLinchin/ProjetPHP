@@ -15,6 +15,7 @@ if (isset($_GET["idC"]))
 
 // $titre = $uneChanson->__get("nom");
 include "$racine/views/entete.php";
+include "$racine/views/recherche.php";
 include "$racine/views/pageSingle.php";
 include "$racine/views/enpied.php";
 ?>
