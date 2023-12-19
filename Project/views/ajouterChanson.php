@@ -6,7 +6,7 @@
 <body>
           
           <div class="insertion">
-            <form action="">
+            <form action="" methode="POST">
               <input class="Ajout" type="text" name="Interprete" placeholder="Interpréte">
               <input class="Ajout" type="text" name="Single" placeholder="Titre Single">
               <input class="Ajout" type="text" name="Duree" placeholder="Durée">
@@ -14,8 +14,12 @@
               <input class="Ajout" type="text" name="Genre" placeholder="Genre">
               <input class="Ajout" type="text" name="MeilleurePlace" placeholder="MeilleurePlace">
               <input class="Ajout" type="text" name="Parole" placeholder="Parole">
-              <input class="Ajout" type="select" name="Album" placeholder="Album">
-
+              <select class="Ajout" name="Album" placeholder="Album">
+              <?php foreach($lesAlbums as $unAlbum){
+              echo "<option value=" . $unAlbum->id . ">". $unAlbum->nom;
+              }
+              ?> </option>
+              </select>
               <button class="valider" type="button">Valider</button>
             </form>
           </div>
