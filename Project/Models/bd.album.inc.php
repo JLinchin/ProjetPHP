@@ -4,7 +4,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
     $racine = "..";
 
 include_once "bd.inc.php";
-include_once "../Classes/Album.php";
+include_once "Classes/Album.php";
 
 function getAlbum(){
     $lesAlbums = array();
@@ -131,11 +131,10 @@ function getImageByChanson($idChanson)
     return $lien;
 }
 
-function addAlbum($id, $nom, $lien){
+function addAlbum($nom, $lien){
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("insert into Album(id, nom, lienImage) values(:id, :nom, :lien)");
-        $req -> bindValue(':id', $id, PDO::PARAM_INT);
+        $req = $cnx->prepare("insert into Album(nom, lienImage) values(:nom, :lien)");
         $req -> bindValue(':nom', $nom, PDO::PARAM_STR);
         $req -> bindValue(':lien', $lien, PDO::PARAM_STR);
 
