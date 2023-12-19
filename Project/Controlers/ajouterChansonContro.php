@@ -4,6 +4,7 @@ $racine = "..";
 
 include_once "$racine/Models/bd.chansons.inc.php";
 include_once "$racine/Models/bd.interprete.inc.php";
+include_once "$racine/Models/bd.album.inc.php";
 
 if (isset($_POST['Interprete']) && ($_POST['Single']) && ($_POST['Duree']) && ($_POST['Album']) && ($_POST['DateSortie']) && ($_POST['Genre']) && ($_POST['MeilleurePlace']) && ($_POST['Parole'])) {
     $nomInterprete = $_POST['Interprete'];
