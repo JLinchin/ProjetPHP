@@ -62,7 +62,7 @@ function getChansonByTitre($titre)
     {
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
-        $req ->bindBalue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
+        $req ->bindValue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
         $req = $cnx->prepare("select * from chanson where nom = :titre");
         $req->bindValue(':titre', $titre, PDO::PARAM_STR);
 
@@ -87,8 +87,7 @@ function addChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("Insert Into Chanson Values(:id, :nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
-        $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
+        $req = $cnx->prepare("Insert Into Chanson Values(:nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
         $req->bindValue(':nom', $uneChanson->__get("nom"), PDO::PARAM_STR);
         $req->bindValue(':dateSortie', $uneChanson->__get("dateSortie"), PDO::PARAM_STR);
         $req->bindValue(':genre', $uneChanson->__get("genre"), PDO::PARAM_STR);
