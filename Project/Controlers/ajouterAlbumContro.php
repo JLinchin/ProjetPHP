@@ -1,22 +1,28 @@
 <?php
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-$racine = "..";
+if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
+    $racine = "..";
+}
 
-include_once "$racine/Models/bd.Album.inc.php";
+include_once "Models/bd.Album.inc.php";
 
-if (isset($_POST['Nom']) && ($_POST['Image']))
-{
-    $nom = $_POST['Nom'];
-    $image = $_POST['Image'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['Nom']) && isset($_FILES['lienImage'])) {
+        $nom = $_POST['Nom'];
+        $lienImage = $_FILES['lienImage'];
 
+        try {
+            // Traitement de l'upload de l'image
+            $dossierUpload = "Images/"; // Remplacez par le chemin de votre dossier d'upload
+            $nomFichier = basename($lienImage['name']);
+            $cheminFichier = $dossierUpload . $nomFichier;
 
+            move_uploaded_file($lienImage['tmp_name'], $cheminFichier);
 
-    try {
-        addAlbum($nom, $image);
-        
-
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+            // Ajout de l'album avec le nom et le chemin de l'image
+            addAlbum($nom, $cheminFichier);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
     }
 }
 

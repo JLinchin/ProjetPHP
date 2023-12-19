@@ -12,7 +12,7 @@
               <input class="Ajout" type="text" name="Duree" placeholder="Durée">
               <input class="Ajout" type="text" name="DateSortie" placeholder="DateSortie">
               <input class="Ajout" type="text" name="Genre" placeholder="Genre">
-              <input class="Ajout" type="text" name="MeilleurePlace" placeholder="MeilleurePlace">
+              <input class="Ajout" type="text" name="MeilleurePlace" placeholder="Meilleure place">
               <input class="Ajout" type="text" name="Parole" placeholder="Parole">
               <input class="Ajout" type="select" name="Album" placeholder="Album">
 
