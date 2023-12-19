@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <script src="js/scriptsR.js"></script>
-<link rel="stylesheet" href="../css/recherche.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/recherche.css">
 <body>
   <h1>Le meilleur des années 80</h1>
     <!--Barre de recherche-->

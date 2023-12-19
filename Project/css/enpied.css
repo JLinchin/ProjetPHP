@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    background-color: black;
+}
+
+.credit{
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    padding-top: 30px;
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.name{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 20%;
+    color: white;
+    list-style-type: none;
+}
+
+.mail{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 20%;
+    color: white;
+    list-style-type: none;
+}
+
+.website{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 20%;
+    color: white;
+    list-style-type: none;
+    content: url(../Assets/pngimg.com\ -\ github_PNG80-modified.png);
+}
