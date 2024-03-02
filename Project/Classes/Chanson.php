@@ -8,9 +8,9 @@ class Chanson{
     private $duree;
     private $meilleurePlace;
     private $paroles;
-    private $idAlbum;
+    private $album;
 
-    public function __construct($id, $nom, $dateSortie, $genre, $duree, $meilleurePlace, $paroles, $idAlbum) 
+    public function __construct($id, $nom, $dateSortie, $genre, $duree, $meilleurePlace, $paroles, $album) 
     {
 	    $this->id = $id;
 	    $this->nom = $nom;
@@ -19,7 +19,7 @@ class Chanson{
         $this->duree = $duree;
         $this->meilleurePlace = $meilleurePlace;
         $this->paroles = $paroles;
-        $this->idAlbum = $idAlbum;
+        $this->album = $album;
     }
 
     public function __get($propriete) {
@@ -31,7 +31,7 @@ class Chanson{
             case "duree" : return $this->duree; break;
             case "meilleurePlace" : return $this->meilleurePlace; break;
             case "paroles" : return $this->paroles; break;
-            case "idAlbum" : return $this->idAlbum; break;
+            case "album" : return $this->album; break;
         }
     }
 
@@ -44,7 +44,7 @@ class Chanson{
             case "duree" : $this->duree = $value; break;
             case "meilleurePlace" : $this->meilleurePlace = $value;break;
             case "paroles" : $this->paroles = $value; break;
-            case "idAlbum" : $this->idAlbum = $value;break;
+            case "album" : $this->album = $value;break;
         }
     }
 

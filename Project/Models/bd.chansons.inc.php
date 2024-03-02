@@ -31,7 +31,30 @@ function getChansons()
     return $lesChansons;
 }
 
+function getChansonsRandom()
+{
+    $lesChansons = array();
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT * FROM chanson ORDER BY RAND()");
+        $req->execute();
 
+        while ($ligne = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            $uneChanson = new Chanson($ligne["id"], $ligne["nom"], $ligne["dateSortie"], $ligne["genre"], $ligne["duree"], $ligne["meilleurePlace"], $ligne["paroles"], $ligne["idAlbum"]);
+            $lesChansons[] = $uneChanson;
+        }
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur ! :" . $e->getMessage();
+        die();
+    }
+
+    return $lesChansons;
+}
 function getChansonByIdC($idC)
 {
     try

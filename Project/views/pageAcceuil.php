@@ -1,3 +1,9 @@
+<?php
+include_once "Models/bd.chansons.inc.php"; // Inclure le fichier contenant votre modèle
+
+$chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les chansons aléatoires
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,53 +19,23 @@
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
     <div class="cover">
-    <button class="left" onclick="leftScroll()">
-      <i class="fas fa-angle-double-left"></i>
-    </button>
-    <div class="scroll-images">
-      <div class="child">
-        <img src="Images/3.gang.jpg">
-        <p>titre</p>   
+      <button class="left" onclick="leftScroll()">
+        <i class="fas fa-angle-double-left"></i>
+      </button>
+      <div class="scroll-images">
+        <?php foreach ($chansons as $chanson): ?>
+          <div class="child">
+            <img src="Images/3.gang.jpg"> <!-- Remplacez par le chemin de l'image de la chanson -->
+            <p><?php echo $chanson->getNom(); ?></p> <!-- Afficher le nom de la chanson -->
+          </div>
+        <?php endforeach; ?>
       </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
-      <div class="child">
-      <img src="Images/3.gang.jpg">
-      <p>titre</p>  
-      </div>
+      <button class="right" onclick="rightScroll()">
+        <i class="fas fa-angle-double-right"></i>
+      </button>
     </div>
-    <button class="right" onclick="rightScroll()">
-      <i class="fas fa-angle-double-right"></i>
-    </button>
-  </div>
   </div>
 </body>
 </html>
