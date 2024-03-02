@@ -28,7 +28,7 @@ $chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les cha
         <?php foreach ($chansons as $chanson): ?>
           <div class="child">
             <img src="Images/3.gang.jpg"> <!-- Remplacez par le chemin de l'image de la chanson -->
-            <p><?php echo $chanson->getNom(); ?></p> <!-- Afficher le nom de la chanson -->
+            <p><?php echo $chanson->{'nom'}; ?></p> <!-- Utilisation des crochets pour accéder à la propriété nom -->
           </div>
         <?php endforeach; ?>
       </div>
@@ -36,6 +36,6 @@ $chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les cha
         <i class="fas fa-angle-double-right"></i>
       </button>
     </div>
-  </div>
+</div>
 </body>
 </html>

@@ -19,4 +19,6 @@
               <button class="valider" type="button">Valider</button>
             </form>
           </div>
+
+          <script src = "js/ajouterChanson.js"></script>
 </body>
