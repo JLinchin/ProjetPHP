@@ -9,6 +9,7 @@ function mainControler($action) {
     $actions["modif"]       = "ajout.php";
     $actions["connexion"]   = "connexion.php";
     $actions["deconnexion"] = "deconnexion.php";
+    $actions["inscription"] = "inscription.php";
 
     if (array_key_exists($action, $actions)) {
         return $actions[$action];

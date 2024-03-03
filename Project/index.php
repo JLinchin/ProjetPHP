@@ -10,6 +10,8 @@ else {
     $action = "defaut";
 }
 
+session_start();
+
 $fichier = mainControler($action);
 include "$racine/controlers/$fichier";
 ?>

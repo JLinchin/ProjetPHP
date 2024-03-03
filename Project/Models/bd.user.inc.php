@@ -3,7 +3,7 @@
     if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
     $racine = "..";
 
-    include_once "bd.inc.php";
+    include_once "$racine/Models/bd.inc.php";
     include_once "$racine/Classes/Utilisateur.php";
 
     function getUser($login, $mdp)
@@ -16,7 +16,7 @@
             $req->bindValue(":mdp", $mdp, PDO::PARAM_STR);
 
             $req->execute();
-            $nbUser = $req->fetch(PDO::FETCH_ASSOC);
+            $nbUser = $req->fetchColumn();
         }
 
         catch(PDOException $e)
@@ -39,7 +39,7 @@
 
             $req->execute();
             $user = $req->fetch(PDO::FETCH_ASSOC);
-            $unUser = new Utilisateur($user["nom"], $user["prenom"]);
+            $unUser = $user ? new Utilisateur($user["nom"], $user["prenom"]) : null;
         }
 
         catch(PDOException $e)
@@ -48,7 +48,10 @@
             die();
         }
 
-        return $unUser;
+        if (!is_null($unUser))
+            return $unUser;
+
+        return null;
     }
 
     function addUser($unUser, $login, $hashedMdp)

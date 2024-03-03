@@ -39,3 +39,34 @@ document.addEventListener("DOMContentLoaded", function () {
     leftButton.addEventListener("click", leftScroll);
     rightButton.addEventListener("click", rightScroll);
   });
+
+
+async function search()
+{
+  //Récupération du contenu de la zone de recherche
+	valSearch = document.getElementById("zoneRecherche").value;
+	display = document.getElementById("display");
+
+    //Supression du contenu dans le champ des résultats
+	while (display.hasChildNodes())
+		display.removeChild(display.firstChild);
+
+	if (valSearch != "")
+	{
+        //On attend le contenu retourné par le lien passé en paramètre
+		response = await fetch('http://localhost/PHPChansons/Joseph/Project/Models/bd.api.inc.php?nom=' + valSearch);
+        //On attend le contenu retourné sous la forme d'un fichier JSON
+        data = await response.json();
+
+        //Pour chaque élément du contenu JSON
+        for (i = 0; i < data.length; i++)
+        {
+            console.log(data[i].id);
+
+            //Création d'un élément pour stocker le nom de la chanson
+            divTitre = document.createElement("a");
+            divTitre.innerHTML = data[i].nom;
+            display.append(divTitre);
+        }
+	}
+}
