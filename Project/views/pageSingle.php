@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="../css/pageSingle.css">
-        <link rel="stylesheet" href="../css/entete.css">
-    </head>
-
-    <body>
-    <?php include('entete.php'); ?>
         <div class="single">
         <h1 class="titreSingle">Titre du Single</h1>
             <div class="infoSingle">
@@ -47,4 +38,3 @@
             <button class="btnSupp" type="button">Supprimer</button>
             </div>
         </div>
-    </body>

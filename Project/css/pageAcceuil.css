@@ -108,3 +108,9 @@ button {
     cursor: pointer;
     font-size: 25px;
 }
+
+#display
+{
+    display: flex;
+    flex-direction: column;
+}

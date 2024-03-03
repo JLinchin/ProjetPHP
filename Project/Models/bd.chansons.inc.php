@@ -1,8 +1,10 @@
 <?php
 
+    if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
+    $racine = "..";
 
-include_once "bd.inc.php";
-include_once "Classes/Chanson.php";
+    include_once "$racine/Models/bd.inc.php";
+    include_once "$racine/Classes/Chanson.php";
 
 function getChansons()
 {
@@ -58,18 +60,22 @@ function getChansonByIdC($idC)
 
 function getChansonByTitre($titre)
 {
+    $lesNoms = array();
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from chanson where nom like :titre limit 10");
-        $req ->bindBalue(':titre', '%' . $titre . '%', PDO::PARAM_STR);
-        $req = $cnx->prepare("select * from chanson where nom = :titre");
-        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
+        $req = $cnx->prepare("select id, nom from chanson where nom like :titre limit 5");
+        $req ->bindValue(':titre', $titre . '%', PDO::PARAM_STR);
 
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        $uneChanson = new Chanson($ligne["id"], $ligne["nom"], $ligne["dateSortie"], $ligne["genre"], $ligne["duree"], $ligne["meilleurePlace"], $ligne["paroles"], $ligne["idAlbum"]);
+
+        while($ligne)
+        {
+            $lesNoms[] = $ligne;
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        }
     }
 
     catch (PDOException $e)
@@ -78,7 +84,7 @@ function getChansonByTitre($titre)
         die();
     }
 
-    return $uneChanson;
+    return $lesNoms;
 }
 
 

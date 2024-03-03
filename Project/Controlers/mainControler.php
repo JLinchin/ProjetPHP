@@ -7,8 +7,9 @@ function mainControler($action) {
     $actions["detail"]      = "detail.php";
     $actions["ajout"]       = "ajouterChansonContro.php";
     $actions["modif"]       = "ajout.php";
-    $actions["connexion"]   = "connexionContro.php";
+    $actions["connexion"]   = "connexion.php";
     $actions["deconnexion"] = "deconnexion.php";
+    $actions["inscription"] = "inscription.php";
 
     if (array_key_exists($action, $actions)) {
         return $actions[$action];

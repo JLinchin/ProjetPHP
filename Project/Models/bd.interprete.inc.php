@@ -1,7 +1,10 @@
 <?php
 
-    include_once "bd.inc.php";
-    include_once "../Classes/Interprete.php";
+    if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
+        $racine = "..";
+    
+    include_once "$racine/Models/bd.inc.php";
+    include_once "$racine/Classes/Interprete.php";
 
     function getInterpretes()
     {
