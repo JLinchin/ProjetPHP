@@ -31,7 +31,6 @@ $chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les cha
         <?php
         // Récupérer le lien de l'image de l'album pour cette chanson
         $lienImage = getImageByChanson($chanson->id);
-
         // Vérifier si le lien de l'image de l'album est valide
         if ($lienImage) {
             // Afficher l'image de l'album si le lien est valide
