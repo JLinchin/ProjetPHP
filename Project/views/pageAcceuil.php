@@ -1,5 +1,6 @@
 <?php
 include_once "Models/bd.chansons.inc.php"; // Inclure le fichier contenant votre modèle
+include_once "Models/bd.album.inc.php"; // Inclure le fichier contenant votre modèle
 
 $chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les chansons aléatoires
 ?>
@@ -25,12 +26,24 @@ $chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les cha
         <i class="fas fa-angle-double-left"></i>
       </button>
       <div class="scroll-images">
-        <?php foreach ($chansons as $chanson): ?>
-          <div class="child">
-            <img src="Images/3.gang.jpg"> <!-- Remplacez par le chemin de l'image de la chanson -->
-            <p><?php echo $chanson->{'nom'}; ?></p> <!-- Utilisation des crochets pour accéder à la propriété nom -->
-          </div>
-        <?php endforeach; ?>
+      <?php foreach ($chansons as $chanson): ?>
+    <div class="child">
+        <?php
+        // Récupérer le lien de l'image de l'album pour cette chanson
+        $lienImage = getImageByChanson($chanson->id);
+
+        // Vérifier si le lien de l'image de l'album est valide
+        if ($lienImage) {
+            // Afficher l'image de l'album si le lien est valide
+            echo "<img src='" . $lienImage['lienImage'] . "' alt=''>";
+        } else {
+            // Afficher une image par défaut si le lien n'est pas valide
+            echo "<img src='chemin/vers/image/default.jpg' alt='Image par défaut'>";
+        }
+        ?>
+        <p><?php echo $chanson->{'nom'}; ?></p>
+    </div>
+<?php endforeach; ?>
       </div>
       <button class="right" onclick="rightScroll()">
         <i class="fas fa-angle-double-right"></i>

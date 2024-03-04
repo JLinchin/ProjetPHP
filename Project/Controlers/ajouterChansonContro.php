@@ -6,7 +6,8 @@ include_once "$racine/Models/bd.chansons.inc.php";
 include_once "$racine/Models/bd.interprete.inc.php";
 include_once "$racine/Models/bd.album.inc.php";
 
-if (isset($_POST['Interprete']) && ($_POST['Single']) && ($_POST['Duree']) && ($_POST['Album']) && ($_POST['DateSortie']) && ($_POST['Genre']) && ($_POST['MeilleurePlace']) && ($_POST['Parole'])) {
+$lesAlbums = getAlbum();
+if (isset($_POST['Interprete']) && isset($_POST['Single']) && isset($_POST['Duree']) && isset($_POST['Album']) && isset($_POST['DateSortie']) && isset($_POST['Genre']) && isset($_POST['MeilleurePlace']) && isset($_POST['Parole'])) {
     $nomInterprete = $_POST['Interprete'];
     $single = $_POST['Single'];
     $duree = $_POST['duree'];
@@ -21,8 +22,7 @@ if (isset($_POST['Interprete']) && ($_POST['Single']) && ($_POST['Duree']) && ($
         $uninterprete = new Interprete(0,$nomInterprete);
         addInterprete($uninterprete);
     }
-
-    try {
+    try { 
         $uneChanson = new chanson(0,$single,$dateSortie,$genre,$duree,$meilleurePlace,$parole,$album);
         addChanson($uneChanson);
 
