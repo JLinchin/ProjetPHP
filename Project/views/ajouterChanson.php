@@ -15,7 +15,6 @@
               <input class="Ajout" type="text" name="MeilleurePlace" placeholder="Meilleure place">
               <input class="Ajout" type="text" name="Parole" placeholder="Parole">
               <input class="Ajout" type="select" name="Album" placeholder="Album">
-
               <button class="valider" type="button">Valider</button>
             </form>
           </div>
