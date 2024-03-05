@@ -110,7 +110,7 @@ function addChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("Insert Into Chanson Values(:nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
+        $req = $cnx->prepare("Insert Into Chanson (nom, dateSortie, genre, duree, meilleurePlace, paroles, idAlbum) Values(:nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
         $req->bindValue(':nom', $uneChanson->__get("nom"), PDO::PARAM_STR);
         $req->bindValue(':dateSortie', $uneChanson->__get("dateSortie"), PDO::PARAM_STR);
         $req->bindValue(':genre', $uneChanson->__get("genre"), PDO::PARAM_STR);

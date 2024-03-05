@@ -27,7 +27,7 @@ if (isset($_POST['Interprete']) && isset($_POST['Single']) && isset($_POST['Dure
         addChanson($uneChanson);
 
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        echo "Error:" . $e->getMessage();
     }
 }
 

@@ -35,19 +35,20 @@
         try
         {
             $cnx = connexionPDO();
-            $req = $cnx->prepare("SELECT * FROM interprete WHERE nomScene = :nomScene");
+            $req = $cnx->prepare("SELECT COUNT(*) FROM interprete WHERE nomScene = :nomScene");
             $req->bindValue(":nomScene", $nom, PDO::PARAM_STR);
             $req->execute();
     
-            $nombreDeLignes = $req->rowCount();
+            $count = $req->fetchColumn(); // Utilisation de fetchColumn() sans spécifier le mode de récupération
         }
+    
         catch (PDOException $e)
         {
             print "Erreur ! :" . $e->getMessage();
             die();
         }
     
-        return $nombreDeLignes;
+        return $count;
     }
 
     function getInterpreteById($idInterp)
@@ -73,12 +74,12 @@
         return $unInterprete;
     }
 
-    function addInterprete($unInterprete)
+function addInterprete($unInterprete)
 {
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("INSERT INTO Interprete VALUES (:nomScene)");
+        $req = $cnx->prepare("INSERT INTO Interprete (nomScene) VALUES (:nomScene)");
         $req->bindValue(':nomScene', $unInterprete->__get("nomScene"), PDO::PARAM_STR);
         $req->execute();
     }
