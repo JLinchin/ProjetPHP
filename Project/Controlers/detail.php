@@ -1,14 +1,14 @@
 <?php
-
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
+$racine = "..";
 
 include_once "$racine/Models/bd.chansons.inc.php";
 //include_once "$racine/Models/bd.tags.inc.php";
 include_once "$racine/Models/bd.album.inc.php";
 
 //Récupération des données GET, POST, ...
-$idC = $_GET["idC"];
+if (isset($_GET["idC"]))
+    $idC = $_GET["idC"];
 
 $uneChanson = getChansonByIdC($idC);
 $lienImage  = getImageByChanson($idC);

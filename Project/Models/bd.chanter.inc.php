@@ -1,12 +1,9 @@
 <?php
 
-    if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
-
     include_once "bd.inc.php";
-    include_once "$racine/classes/Chanson.php";
-    include_once "$racine/classes/Chanter.php";
-    include_once "$racine/classes/Interprete.php";
+    include_once "../Classes/Chanson.php";
+    include_once "../Classes/Chanter.php";
+    include_once "../Classes/Interprete.php";
 
     function getChanter()
     {

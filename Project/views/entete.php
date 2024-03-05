@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<?php
+?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -12,7 +14,7 @@
             </div>
             <ul class="nav-list">
                 <li class="nav-list-item">
-                    <a href="#" class="nav-link">Accueil</a>
+                    <a href= "./?action=recherche" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-list-item">
                     <a href="./?action=ajoutC" class="nav-link">Ajouter Chanson</a>
