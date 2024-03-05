@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
     <head>
-        <link href="../css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <link rel="stylesheet" href="../css/pageSingle.css">
-        <link rel="stylesheet" href="../css/entete.css">
+        <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="css/pageSingle.css" />
+        <link rel="stylesheet" href="css/entete.css" />
     </head>
 
     <body>
-    <?php include('entete.php'); ?>
         <div class="single">
         <h1 class="titreSingle">Titre du Single</h1>
             <div class="infoSingle">
-                <img class="imgAlbum" src="../Images/22.BackToFront.jpg" link href="https://www.youtube.com/watch?v=mHONNcZbwDY"></img>
+                <img class="imgAlbum" src="Images/22.BackToFront.jpg" link href="https://www.youtube.com/watch?v=mHONNcZbwDY"></img>
                 <div class="infoDuSingle">
-                    <h2 class="nomInterprete">Interprete</h2>
+                    
+                    <h2 class="nomInterprete">
+                        <?php 
+                        $interprete->__get("nomScene");
+                        ?>
+                    </h2>
                     <h2 class="titreAlbum">Album</h2>
                     <h2 class="duree">00:00</h2>
                 </div>

@@ -7,7 +7,8 @@ include_once "$racine/Models/bd.interprete.inc.php";
 include_once "$racine/Models/bd.album.inc.php";
 
 $lesAlbums = getAlbum();
-if (isset($_POST['Interprete']) && isset($_POST['Single']) && isset($_POST['Duree']) && isset($_POST['Album']) && isset($_POST['DateSortie']) && isset($_POST['Genre']) && isset($_POST['MeilleurePlace']) && isset($_POST['Parole'])) {
+if (isset($_POST['id']) && isset($_POST['Interprete']) && isset($_POST['Single']) && isset($_POST['Duree']) && isset($_POST['Album']) && isset($_POST['DateSortie']) && isset($_POST['Genre']) && isset($_POST['MeilleurePlace']) && isset($_POST['Parole'])) {
+    $idInterp = $_POST['id'];
     $nomInterprete = $_POST['Interprete'];
     $single = $_POST['Single'];
     $duree = $_POST['duree'];
@@ -16,23 +17,19 @@ if (isset($_POST['Interprete']) && isset($_POST['Single']) && isset($_POST['Dure
     $genre = $_POST['Genre'];
     $meilleurePlace = $_POST['MeilleurePlace'];
     $parole = $_POST['Parole'];
-    
-    if (getInterpretesByNom($nomInterprete) == 0)
-    {
-        $uninterprete = new Interprete(0,$nomInterprete);
-        addInterprete($uninterprete);
-    }
+
+    $interprete = getInterpreteById($idInterp);
+
     try { 
         $uneChanson = new chanson(0,$single,$dateSortie,$genre,$duree,$meilleurePlace,$parole,$album);
         addChanson($uneChanson);
 
-    } 
-    catch (PDOException $e) {
+    } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
 }
 
 include "$racine/views/entete.php";
-include "$racine/views/pageSingle.php";
+include "$racine/views/ajouterChanson.php";
 include "$racine/views/enpied.php";
 ?>
