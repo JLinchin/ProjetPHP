@@ -35,20 +35,19 @@
         try
         {
             $cnx = connexionPDO();
-            $req = $cnx->prepare("select count(*) from interprete where nomScene = :nomScene");
+            $req = $cnx->prepare("SELECT * FROM interprete WHERE nomScene = :nomScene");
             $req->bindValue(":nomScene", $nom, PDO::PARAM_STR);
             $req->execute();
-
-            $ligne = $req->fetchColumn(PDO::FETCH_ASSOC);
+    
+            $nombreDeLignes = $req->rowCount();
         }
-
         catch (PDOException $e)
         {
             print "Erreur ! :" . $e->getMessage();
             die();
         }
     
-        return $ligne;
+        return $nombreDeLignes;
     }
 
     function getInterpreteById($idInterp)
@@ -75,21 +74,20 @@
     }
 
     function addInterprete($unInterprete)
+{
+    try
     {
-        try
-        {
-            $cnx = connexionPDO();
-            $req = $cnx->prepare("Insert Into Interprete Values (:nomScene)");
-            $req->bindValue(':nomScene', $unInterprete->__get("nomScene"), PDO::PARAM_STR);
-            $req->execute();
-        }
-
-        catch (PDOException $e)
-        {
-            print "Erreur ! :" . $e->getMessage();
-            die();
-        }
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("INSERT INTO Interprete VALUES (:nomScene)");
+        $req->bindValue(':nomScene', $unInterprete->__get("nomScene"), PDO::PARAM_STR);
+        $req->execute();
     }
+    catch (PDOException $e)
+    {
+        echo "Erreur ! :" . $e->getMessage();
+        die();
+    }
+}
 
     function majInterprete($nouvInterprete)
     {
