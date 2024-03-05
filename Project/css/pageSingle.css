@@ -3,10 +3,11 @@
     src: url(../../Project/fonts/Magic.ttf) format('truetype'); /* Chemin vers le fichier de la police */
 }
 
-body{
+body,html{
     background: #FFAF90;
     margin : 0;
     padding: 0;
+    background-image: url(../ImageAlbum/5788961.jpg);
 }
 
 .single {
