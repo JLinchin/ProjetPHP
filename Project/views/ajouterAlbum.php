@@ -11,14 +11,11 @@
         <div class="img">
             <img id="jaquette" class="jaquette" src="Assets/Jaquette.jpg" alt="Jaquette" onclick="ouvrirGestionnaireFichier()" />
         </div>
-        <form method="post" action="ajouterAlbumContro.php" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <input class="Ajout" type="text" name="nom" placeholder="Nom de l'album" required>
             <label for="imageInput" class="Txt" name="image">Sélectionner une image</label>
             <input type="file" id="imageInput" accept="image/*" style="display: none" name="lienImage" required>
             <button class="valider" type="submit">Valider</button>
         </form>
     </div>
-
-  
-
 </body>
