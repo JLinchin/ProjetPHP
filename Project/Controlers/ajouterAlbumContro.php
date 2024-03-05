@@ -6,13 +6,13 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 include_once "Models/bd.Album.inc.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['Nom']) && isset($_FILES['lienImage'])) {
-        $nom = $_POST['Nom'];
+    if (isset($_POST['nom']) && isset($_FILES['lienImage'])) {
+        $nom = $_POST['nom'];
         $lienImage = $_FILES['lienImage'];
 
         try {
             // Traitement de l'upload de l'image
-            $dossierUpload = "Images/"; // Remplacez par le chemin de votre dossier d'upload
+            $dossierUpload = "Images/"; // Chemin de votre dossier d'upload
             $nomFichier = basename($lienImage['name']);
             $cheminFichier = $dossierUpload . $nomFichier;
 
