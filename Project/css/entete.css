@@ -1,7 +1,12 @@
+@font-face {
+    font-family: 'MaPolice'; /* Nom de la police que vous utiliserez dans votre CSS */
+    src: url(../../Project/fonts/Magic.ttf) format('truetype'); /* Chemin vers le fichier de la police */
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #FFAF90;
+    background-color: black;
 }
 
 .logo {
@@ -13,7 +18,7 @@ body {
 
 nav.main-navigation {
     position: relative;
-    background-color: #FEDFBE;
+    background-color: black;
     height: 100px;
 }
 
@@ -41,7 +46,8 @@ a.nav-link {
     font-weight: 500;
     cursor: pointer;
     position: relative;
-    color: #404040;
+    color: white;
+    font-family: 'MaPolice', sans-serif;
 }
 
 @keyframes FadeIn {
@@ -139,4 +145,6 @@ a.nav-link {
 .nav-list-item a:hover{
     transition: 0.3s;
     scale: 1.2;
+    color: white;
 }
+

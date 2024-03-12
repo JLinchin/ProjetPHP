@@ -3,8 +3,7 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #FFAF90 !important;
-   
+    background-image: url(../ImageAlbum/5788961.jpg);
 }
 
 .insertion{
@@ -13,12 +12,12 @@ body, html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 200px;
+    margin-bottom: 300px;
 }
 
 .jaquette{
     width: 190px;
-    height: 170px;
+    height: 190px;
     border: 1px solid #000;
     display: flex;
     margin-top: -725px;
@@ -34,46 +33,51 @@ body, html {
     justify-content: space-between;
 }
 
+
 .valider{
     color: rgb(0, 0, 0);
     border: 0;
     outline: 0;
-    background-color: #90E0FF;
+    background-color: #24ccfd;
     border-radius: 30px;
     width: 200px;
     caret-color: transparent;
     line-height: 40px;
+    margin-top: 15px;
 }
 
 .valider:hover{
-    background-color: #39c7ff;
+    background-color: rgb(107, 213, 255);
 }
 
 .Paroles{
     color: rgb(0, 0, 0);
     border: 0;
     outline: 0;
-    background-color: #BBF6BE;
+    background-color: #fd3f99;
     border-radius: 30px;
     width: 450px;
     caret-color: transparent;
     line-height: 40px;
 }
 .Paroles:hover{
-    background-color: #82eb88;
+    background-color: #fd6fb2;
 }
 
 .Ajout {
     color: rgb(0, 0, 0);
     border: 0;
     outline: 0;
-    background-color: white;
+    background-color: #fff17c;
     border-radius: 30px;
     width: 450px;
-    caret-color: transparent;
     line-height: 40px;
     text-align:left;
+    padding-left: 10px;
+    margin-top: 15px;
 }
 
-
+select{
+    padding: 8px;
+}
     

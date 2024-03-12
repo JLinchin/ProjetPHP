@@ -1,20 +1,21 @@
 <?php
-
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
-    $racine = "..";
+$racine = "..";
 
 include_once "$racine/Models/bd.chansons.inc.php";
 //include_once "$racine/Models/bd.tags.inc.php";
 include_once "$racine/Models/bd.album.inc.php";
 
 //Récupération des données GET, POST, ...
-$idC = $_GET["idC"];
+if (isset($_GET["idC"]))
+    $idC = $_GET["idC"];
 
-$uneChanson = getChansonByIdC($idC);
-$lienImage  = getImageByChanson($idC);
+// $uneChanson = getChansonByIdC($idC);
+// $lienImage  = getImageByChanson($idC);
 
-$titre = $uneChanson->__get("nom");
-include "$racine/vue/entete.php";
-include "$racine/vue/pageSingle.php";
-include "$racine/vue/enpied.php";
+// $titre = $uneChanson->__get("nom");
+include "$racine/views/entete.php";
+include "$racine/views/recherche.php";
+include "$racine/views/pageSingle.php";
+include "$racine/views/enpied.php";
 ?>
