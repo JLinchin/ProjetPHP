@@ -59,7 +59,7 @@ create table User
 (
     idUser int primary key auto_increment,
     userLog varchar(30),
-    mdp varchar(30),
+    mdp varchar(64),
     nom varchar(50),
     prenom varchar(50)
 );
@@ -362,7 +362,7 @@ insert into Chanson(nom,dateSortie,duree,meilleurePlace,paroles,genre) Values
 ('One Step Beyond', '1979', '02:18', 'Top 1 Hit-Parade', null, 'Pop'),
 ('Tout simplement (tout doucement)', '1985', '04:10', 'Top 2 Hit-Parade', null, 'Variété française');
 
-insert into User(idUser, userLog, mdp) Values
-(0, "admin", "admin");
+insert into User(idUser, userLog, mdp, nom, prenom) Values
+(0, "admin", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", "ADMIN", "Admin");
 
 select * from interprete;

@@ -61,11 +61,10 @@ async function search()
         //Pour chaque élément du contenu JSON
         for (i = 0; i < data.length; i++)
         {
-            console.log(data[i].id);
-
             //Création d'un élément pour stocker le nom de la chanson
             divTitre = document.createElement("a");
-            divTitre.innerHTML = data[i].nom;
+            divTitre.href = "./?action=detail&idC=" + data[i].id;
+            divTitre.innerText = data[i].nom;
             display.append(divTitre);
         }
 	}

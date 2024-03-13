@@ -13,7 +13,28 @@
             $cnx = connexionPDO();
             $req = $cnx->prepare("select count(*) from User where userLog = :login and mdp = :mdp");
             $req->bindValue(":login", $login, PDO::PARAM_STR);
-            $req->bindValue(":mdp", $mdp, PDO::PARAM_STR);
+            $req->bindValue(":mdp", $mdp);
+
+            $req->execute();
+            $nbUser = $req->fetchColumn();
+        }
+
+        catch(PDOException $e)
+        {
+            print "Erreur ! :" . $e->getMessage();
+            die();
+        }
+
+        return $nbUser;
+    }
+
+    function getUserByLogin($login)
+    {
+        try
+        {
+            $cnx = connexionPDO();
+            $req = $cnx->prepare("select count(*) from User where userLog like :login");
+            $req->bindValue(":login", "%" . $login . "%", PDO::PARAM_STR);
 
             $req->execute();
             $nbUser = $req->fetchColumn();

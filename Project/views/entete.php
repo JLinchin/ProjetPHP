@@ -4,10 +4,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
         <link rel="stylesheet" href="css/entete.css">
-        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/pageAcceuil.css"/>
         <link rel="stylesheet" href="css/recherche.css">
         <link rel="stylesheet" href="css/Connexion.css">
+        
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
 
         <title>Le meilleur des années 80</title>
     </head>

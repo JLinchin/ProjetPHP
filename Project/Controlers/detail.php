@@ -14,7 +14,7 @@ $uneChanson = getChansonByIdC($idC);
 $lienImage  = getImageByChanson($idC);
 
 $titre = $uneChanson->__get("nom");
-include "$racine/vue/entete.php";
-include "$racine/vue/pageSingle.php";
-include "$racine/vue/enpied.php";
+include "$racine/views/entete.php";
+include "$racine/views/pageSingle.php";
+include "$racine/views/enpied.php";
 ?>
