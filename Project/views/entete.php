@@ -22,7 +22,10 @@
                     <a href= "./?action=recherche" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-list-item">
-                    <a href="./?action=ajout" class="nav-link">Ajouter Chanson</a>
+                    <a href="./?action=ajoutC" class="nav-link">Ajouter Chanson</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="./?action=ajoutA" class="nav-link">Ajouter Album</a>
                 </li>
                 <li class="nav-list-item">
                     <?php

@@ -9,57 +9,36 @@
         </div>
       </div>
 
-      <div class="cover">
-        <button class="left" onclick="leftScroll()">
-          <i class="fas fa-angle-double-left"></i>
-        </button>
-
-        <div class="scroll-images">
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
-
-          <div class="child">
-            <img src="Images/3.gang.jpg">
-            <p>titre</p>  
-          </div>
+        <div class="cover">
+            <button class="left" onclick="leftScroll()">
+                <i class="fas fa-angle-double-left"></i>
+            </button>
+            <div class="scroll-images">
+                <?php foreach ($chansons as $chanson): ?>
+                <div class="child">
+                    <?php
+                        // Récupérer le lien de l'image de l'album pour cette chanson
+                        $lienImage = getImageByChanson($chanson->id);
+                        // Vérifier si le lien de l'image de l'album est valide
+                        if ($lienImage)
+                        {
+                            // Afficher l'image de l'album si le lien est valide
+                            echo "<img src='" . $lienImage['lienImage'] . "' alt=''>";
+                        }
+                        else
+                        {
+                            // Afficher une image par défaut si le lien n'est pas valide
+                            echo "<img src='chemin/vers/image/default.jpg' alt='Image par défaut'>";
+                        }
+                    ?>
+                    <p><?php echo $chanson->{'nom'}; ?></p>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <button class="right" onclick="rightScroll()">
+                <i class="fas fa-angle-double-right"></i>
+            </button>
         </div>
-
-        <button class="right" onclick="rightScroll()">
-          <i class="fas fa-angle-double-right"></i>
-        </button>
-      </div>
     </div>
 
     <script src="https://kit.fontawesome.com/a59b9b09ab.js"></script>

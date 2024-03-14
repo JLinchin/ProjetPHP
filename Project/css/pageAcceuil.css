@@ -1,3 +1,5 @@
+
+
 .container{
     height: 50vh;
     width: 100vw;
@@ -8,6 +10,10 @@
     position: relative;
     padding: 0px 30px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .left {

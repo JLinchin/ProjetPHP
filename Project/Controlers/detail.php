@@ -10,8 +10,8 @@ include_once "$racine/Models/bd.album.inc.php";
 if (isset($_GET["idC"]))
     $idC = $_GET["idC"];
 
-$uneChanson = getChansonByIdC($idC);
-$lienImage  = getImageByChanson($idC);
+// $uneChanson = getChansonByIdC($idC);
+// $lienImage  = getImageByChanson($idC);
 
 $titre = $uneChanson->__get("nom");
 include "$racine/views/entete.php";
