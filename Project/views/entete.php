@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/pageAcceuil.css"/>
         <link rel="stylesheet" href="css/recherche.css">
         <link rel="stylesheet" href="css/Connexion.css">
+        <link rel="stylesheet" href="css/enpied.css" />
         
         <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
 

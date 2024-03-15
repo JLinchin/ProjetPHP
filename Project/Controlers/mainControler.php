@@ -5,8 +5,8 @@ function mainControler($action) {
     $actions["defaut"]      = "recherche.php";
     $actions["accueil"]     = "recherche.php";
     $actions["detail"]      = "detail.php";
-    $actions["ajoutC"]       = "ajouterChansonContro.php";
-    $actions["ajoutA"]       = "ajouterAlbumContro.php";
+    $actions["ajoutC"]      = "ajouterChansonContro.php";
+    $actions["ajoutA"]      = "ajouterAlbumContro.php";
     $actions["modif"]       = "ajout.php";
     $actions["connexion"]   = "connexion.php";
     $actions["deconnexion"] = "deconnexion.php";

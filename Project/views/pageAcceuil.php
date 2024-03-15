@@ -14,7 +14,7 @@
                 <i class="fas fa-angle-double-left"></i>
             </button>
             <div class="scroll-images">
-                <?php foreach ($chansons as $chanson): ?>
+                <?php foreach ($chansons as $chanson) { ?>
                 <div class="child">
                     <?php
                         // Récupérer le lien de l'image de l'album pour cette chanson
@@ -33,7 +33,7 @@
                     ?>
                     <p><?php echo $chanson->{'nom'}; ?></p>
                 </div>
-                <?php endforeach; ?>
+                <?php } ?>
             </div>
             <button class="right" onclick="rightScroll()">
                 <i class="fas fa-angle-double-right"></i>
