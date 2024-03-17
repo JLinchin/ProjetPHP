@@ -54,19 +54,37 @@ async function search()
 	if (valSearch != "")
 	{
         //On attend le contenu retourné par le lien passé en paramètre
-		response = await fetch('http://localhost/PHPChansons/Joseph/Project/Models/bd.api.inc.php?nom=' + valSearch);
+		response = await fetch('http://localhost/PHPChansons/Joseph/Project/Models/bd.api.inc.php?action=search&nom=' + valSearch);
         //On attend le contenu retourné sous la forme d'un fichier JSON
         data = await response.json();
 
         //Pour chaque élément du contenu JSON
         for (i = 0; i < data.length; i++)
         {
-            console.log(data[i].id);
-
             //Création d'un élément pour stocker le nom de la chanson
             divTitre = document.createElement("a");
-            divTitre.innerHTML = data[i].nom;
+            divTitre.href = "./?action=detail&idC=" + data[i].id;
+            divTitre.innerText = data[i].nom;
             display.append(divTitre);
         }
 	}
+}
+
+async function supprimer(idC)
+{
+
+    console.log(idC);
+    var choix = false;
+
+    if (confirm("Voulez-vous supprimer ?"))
+    {
+        choix = true;
+    }
+
+    if (choix)
+    {
+        response = await fetch('http://localhost/PHPChansons/Joseph/Project/Models/bd.api.inc.php?action=supp&id=' + idC);
+
+        location.replace("http://localhost/PHPChansons/Joseph/Project");
+    }
 }

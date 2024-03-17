@@ -9,19 +9,22 @@
     if(isset($_POST["login"]) && isset($_POST["mdp"]) && isset($_POST["nom"]) && isset($_POST["prenom"]))
     {
         $login = $_POST["login"];
-        $mdp = $_POST["mdp"];
+        $mdp = hash('sha256', $_POST["mdp"]);
         $nom = $_POST["nom"];
         $prenom = $_POST["prenom"];
 
-        $nbUser = getUser($login, $mdp);
+        $nbUser = getUserByLogin($login);
         if ($nbUser == "0")
         {
             addUser(new Utilisateur($nom, $prenom), $login, $mdp);
+            $_SESSION["nom"] = $nom;
+            $_SESSION["prenom"] = $prenom;
             $_SESSION["is_co"] = true;
             include "$racine/Controlers/recherche.php";
         }
         else
         {
+            echo "<script>alert('Cet utilisateur existe déjà !')</script>";
             include "$racine/views/inscription.php";
             include "$racine/views/enpied.php";
         }

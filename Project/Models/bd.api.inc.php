@@ -19,6 +19,25 @@
         }, $lesChansons));
     }
 
+    function suppTitre($idC)
+    {
+        delChanson($idC);
+
+        $result = ["true"];
+
+        header('Content-Type: application/json');
+        echo json_encode(array_map(function ($item)
+        {
+            return
+            [
+                'res' => "true"
+            ];
+        }, $result));
+    }
 
 
-    $res = getTitres($_GET["nom"]);
+
+    if ($_GET["action"] == "search")
+        $res = getTitres($_GET["nom"]);
+    else
+        $res = suppTitre($_GET["id"]);

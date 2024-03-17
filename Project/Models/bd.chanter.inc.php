@@ -63,6 +63,29 @@
         return $lesInterpretes;
     }
 
+    function getInterpreteByIdC($idChanson)
+    {
+        try
+        {
+            $cnx = connexionPDO();
+            $req = $cnx->prepare("select * from interprete inner join chanter on idInterprete = id where idChanson = :idC");
+            $req->bindValue(":idC", $idChanson, PDO::PARAM_INT);
+            $req->execute();
+
+            $ligne = $req->fetch(PDO::FETCH_ASSOC);
+            
+            $unInterprete = new Interprete($ligne["id"], $ligne["nomScene"]);
+        }
+
+        catch (PDOException $e)
+        {
+            print "Erreur ! :" . $e->getMessage();
+            die();
+        }
+
+        return $unInterprete;
+    }
+
     function addChanter($uneChanson, $unInterprete)
     {
         try
@@ -100,7 +123,7 @@
         }
     }
 
-    function delInterprete($uneChanson, $unInterprete)
+    function delInterpreteByIdC($uneChanson, $unInterprete)
     {
         try
         {

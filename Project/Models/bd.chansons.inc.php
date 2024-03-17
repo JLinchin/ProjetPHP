@@ -33,7 +33,30 @@ function getChansons()
     return $lesChansons;
 }
 
+function getChansonsRandom()
+{
+    $lesChansons = array();
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("SELECT * FROM chanson ORDER BY RAND()");
+        $req->execute();
 
+        while ($ligne = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            $uneChanson = new Chanson($ligne["id"], $ligne["nom"], $ligne["dateSortie"], $ligne["genre"], $ligne["duree"], $ligne["meilleurePlace"], $ligne["paroles"], $ligne["idAlbum"]);
+            $lesChansons[] = $uneChanson;
+        }
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur ! :" . $e->getMessage();
+        die();
+    }
+
+    return $lesChansons;
+}
 function getChansonByIdC($idC)
 {
     try
@@ -93,8 +116,7 @@ function addChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("Insert Into Chanson Values(:id, :nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
-        $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
+        $req = $cnx->prepare("Insert Into Chanson (nom, dateSortie, genre, duree, meilleurePlace, paroles, idAlbum) Values(:nom, :dateSortie, :genre, :duree, :meilleurePlace, :paroles, :idAlbum)");
         $req->bindValue(':nom', $uneChanson->__get("nom"), PDO::PARAM_STR);
         $req->bindValue(':dateSortie', $uneChanson->__get("dateSortie"), PDO::PARAM_STR);
         $req->bindValue(':genre', $uneChanson->__get("genre"), PDO::PARAM_STR);
@@ -143,8 +165,8 @@ function delChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("Delete From Chnason Where id = :id");
-        $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
+        $req = $cnx->prepare("Delete From Chanson Where id = :id");
+        $req->bindValue(':id', $uneChanson, PDO::PARAM_INT);
 
         $req->execute();
     }

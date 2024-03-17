@@ -33,6 +33,27 @@
         return $lesInterpretes;
     }
 
+    function getInterpretesByNom($nom)
+    {
+        try
+        {
+            $cnx = connexionPDO();
+            $req = $cnx->prepare("SELECT COUNT(*) FROM interprete WHERE nomScene = :nomScene");
+            $req->bindValue(":nomScene", $nom, PDO::PARAM_STR);
+            $req->execute();
+    
+            $count = $req->fetchColumn(); // Utilisation de fetchColumn() sans spécifier le mode de récupération
+        }
+    
+        catch (PDOException $e)
+        {
+            print "Erreur ! :" . $e->getMessage();
+            die();
+        }
+    
+        return $count;
+    }
+
     function getInterpreteById($idInterp)
     {
         try
@@ -56,25 +77,21 @@
         return $unInterprete;
     }
 
-    function addInterprete($unInterprete)
+function addInterprete($unInterprete)
+{
+    try
     {
-        try
-        {
-            $cnx = connexionPDO();
-            $req = $cnx->prepare("Insert Into Interprete Values (:id, :nom, :prenom, :nomScene)");
-            $req->bindValue(':id', $unInterprete->__get("id"), PDO::PARAM_INT);
-            $req->bindValue(':nom', $unInterprete->__get("nom"), PDO::PARAM_STR);
-            $req->bindValue(':prenom', $unInterprete->__get("prenom"), PDO::PARAM_STR);
-            $req->bindValue(':nomScene', $unInterprete->__get("nomScene"), PDO::PARAM_STR);
-            $req->execute();
-        }
-
-        catch (PDOException $e)
-        {
-            print "Erreur ! :" . $e->getMessage();
-            die();
-        }
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("Insert Into Interprete (nomScene) Values (:nomScene)");
+        $req->bindValue(':nomScene', $unInterprete->__get("nomScene"), PDO::PARAM_STR);
+        $req->execute();
     }
+    catch (PDOException $e)
+    {
+        echo "Erreur ! :" . $e->getMessage();
+        die();
+    }
+}
 
     function majInterprete($nouvInterprete)
     {

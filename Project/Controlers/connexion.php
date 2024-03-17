@@ -11,7 +11,7 @@ use function PHPSTORM_META\type;
     if(isset($_POST["login"]) && isset($_POST["mdp"]))
     {
         $login = $_POST["login"];
-        $mdp = $_POST["mdp"];
+        $mdp = hash('sha256', $_POST["mdp"]);
 
         $nbUser = getUser($login, $mdp);
         if ($nbUser != "0")
@@ -26,6 +26,7 @@ use function PHPSTORM_META\type;
         }
         else
         {
+            echo "<script>alert('Les identifiants de connexion sont erronés !')</script>";
             include "$racine/views/connexion.php";
             include "$racine/views/enpied.php";
         }

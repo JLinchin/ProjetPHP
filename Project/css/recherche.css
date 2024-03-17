@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MaPolice'; /* Nom de la police que vous utiliserez dans votre CSS */
-    src: url(../Project/fonts/Magic.ttf) format('truetype'); /* Chemin vers le fichier de la police */
+    src: url(../../Project/fonts/Magic.ttf) format('truetype'); /* Chemin vers le fichier de la police */
 }
 
 body, html {
@@ -8,18 +8,18 @@ body, html {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url(../ImageAlbum/5788961.jpg);
+    background-image: url(../Assets/5788961.jpg);
 }
 h1{
-    font-size: 666px;
-    text-transform: uppercase;
+    font-size: 6px;
     text-align: center;
     padding-top: 60px;
+    padding-bottom: 20px;
     font-family: 'MaPolice', sans-serif;
     color: rgb(189, 189, 189);
 }
 .searchbar {
-    margin-bottom: auto;
+    margin-bottom: 160px;
     margin-top: auto;
     height: 60px;
     background-color: #fff17c;
