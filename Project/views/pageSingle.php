@@ -1,40 +1,25 @@
-<!DOCTYPE html>
-
         <div class="single">
-        <h1 class="titreSingle">Titre du Single</h1>
+        <h1 class="titreSingle"><?php echo $uneChanson->__get("nom"); ?></h1>
             <div class="infoSingle">
-                <img class="imgAlbum" src="Images/22.BackToFront.jpg" link href="https://www.youtube.com/watch?v=mHONNcZbwDY"></img>
+                <img class="imgAlbum" <?php echo "src='" . $unAlbum->__get("lienImage") ."'"; ?> link href="https://www.youtube.com/watch?v=mHONNcZbwDY"></img>
                 <div class="infoDuSingle">
-                    <h2 class="nomInterprete">Interprete</h2>
-                    <h2 class="titreAlbum">Album</h2>
-                    <h2 class="duree">00:00</h2>
+                    <h2 class="nomInterprete"><?php echo $unInterprete->__get("nomScene"); ?></h2>
+                    <h2 class="titreAlbum"><?php echo $unAlbum->__get("nom"); ?></h2>
+                    <h2 class="duree"><?php echo $uneChanson->__get("duree"); ?></h2>
                 </div>
             </div>
             <div class="paroles">
-                    <p>La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    La gadji, c'est un paqueta
-                    </p>
+                <p><?php echo $uneChanson->__get("paroles"); ?></p>
             </div>
         </div>
-        <div class="button">
-            <div class="wrap">
-            <button class="btnModif" type="button">Modifier</button>
-            <button class="btnSupp" type="button">Supprimer</button>
-            </div>
+
+        <?php
+            if (isset($_SESSION["is_co"]) && $_SESSION["is_co"])
+                echo '
+                    <div class="button">
+                        <div class="wrap">
+                        <a href="./?action=modif&idC=' . $uneChanson->__get("id") . '"><button class="btnModif" type="button">Modifier</button></a>
+                        <button class="btnSupp" type="button" onclick="supprimer(' . $uneChanson->__get('id') . ')">Supprimer</button>
+                    </div>';
+        ?>
         </div>

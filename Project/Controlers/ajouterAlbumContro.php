@@ -27,6 +27,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 include "$racine/views/entete.php";
-include "$racine/views/ajouterAlbum.php";
+
+if (isset($_POST['nom']) && isset($_FILES['lienImage']))
+    include "$racine/views/pageAccueil.php";
+else
+    include "$racine/views/ajouterAlbum.php";
+
 include "$racine/views/enpied.php";
 ?>

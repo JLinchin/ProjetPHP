@@ -1,5 +1,7 @@
+    <h1>Le meilleur des années 80</h1>
+    
     <div class="container">
-      <div class="container h-100">
+      <div class="container h-50 ">
         <div class="d-flex justify-content-center h-25">
           <div class="searchbar">
             <input class="search_input" type="text" name="" placeholder="Recherche" id="zoneRecherche" oninput="search()">
@@ -18,18 +20,15 @@
                 <div class="child">
                     <?php
                         // Récupérer le lien de l'image de l'album pour cette chanson
-                        $lienImage = getImageByChanson($chanson->id);
+                        $lienImage = getImageByChanson($chanson->__get("id"));
+
                         // Vérifier si le lien de l'image de l'album est valide
                         if ($lienImage)
-                        {
                             // Afficher l'image de l'album si le lien est valide
-                            echo "<img src='" . $lienImage['lienImage'] . "' alt=''>";
-                        }
+                            echo "<img src='" . $lienImage["lienImage"] . "' alt=''>";
                         else
-                        {
                             // Afficher une image par défaut si le lien n'est pas valide
-                            echo "<img src='chemin/vers/image/default.jpg' alt='Image par défaut'>";
-                        }
+                            echo "<img src='Assets/Jaquette.jpg' alt='Image par défaut'>";
                     ?>
                     <p><?php echo $chanson->{'nom'}; ?></p>
                 </div>
@@ -40,7 +39,3 @@
             </button>
         </div>
     </div>
-
-    <script src="https://kit.fontawesome.com/a59b9b09ab.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>

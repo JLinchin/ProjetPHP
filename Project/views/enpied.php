@@ -19,5 +19,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://kit.fontawesome.com/a59b9b09ab.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

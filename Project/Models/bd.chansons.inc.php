@@ -165,8 +165,8 @@ function delChanson($uneChanson)
     try
     {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("Delete From Chnason Where id = :id");
-        $req->bindValue(':id', $uneChanson->__get("id"), PDO::PARAM_INT);
+        $req = $cnx->prepare("Delete From Chanson Where id = :id");
+        $req->bindValue(':id', $uneChanson, PDO::PARAM_INT);
 
         $req->execute();
     }

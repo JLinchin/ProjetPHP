@@ -3,16 +3,18 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__)
 $racine = "..";
 
 include_once "$racine/Models/bd.chansons.inc.php";
-//include_once "$racine/Models/bd.tags.inc.php";
 include_once "$racine/Models/bd.album.inc.php";
+include_once "$racine/Models/bd.chanter.inc.php";
 include_once "$racine/Classes/Chanson.php";
 
 //Récupération des données GET, POST, ...
 if (isset($_GET["idC"]))
     $idC = $_GET["idC"];
 
- $uneChanson = getChansonByIdC($idC);
- $lienImage  = getImageByChanson($idC);
+$uneChanson = getChansonByIdC($idC);
+$unAlbum = getAlbumById($uneChanson->__get("idAlbum"));
+$unInterprete = getInterpreteByIdC($idC);
+$lienImage  = getImageByChanson($idC);
 
 $titre = $uneChanson->__get("nom");
 include "$racine/views/entete.php";

@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(../ImageAlbum/5788961.jpg);
+    background-image: url(../Assets/5788961.jpg);
     margin : 0;
     padding: 0;
 }
@@ -39,6 +39,7 @@ body{
     float: left;
     flex-direction: column;
     font-family: 'MaPolice', sans-serif;
+    width: 500px;
 }
 
 .duree{
