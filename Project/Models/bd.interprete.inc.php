@@ -39,7 +39,7 @@
             $req->bindValue(":nomScene", $nom, PDO::PARAM_STR);
             $req->execute();
     
-            $count = $req->fetchColumn(); // Utilisation de fetchColumn() sans spécifier le mode de récupération
+            $count = $req->fetchColumn();
         }
     
         catch (PDOException $e)

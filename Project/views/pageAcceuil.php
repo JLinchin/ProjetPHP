@@ -1,8 +1,8 @@
 <?php
-include_once "Models/bd.chansons.inc.php"; // Inclure le fichier contenant votre modèle
-include_once "Models/bd.album.inc.php"; // Inclure le fichier contenant votre modèle
+include_once "Models/bd.chansons.inc.php";
+include_once "Models/bd.album.inc.php"; 
 
-$chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les chansons aléatoires
+$chansons = getChansonsRandom(); 
 ?>
 
 <!DOCTYPE html>
@@ -29,14 +29,10 @@ $chansons = getChansonsRandom(); // Appeler la fonction pour récupérer les cha
       <?php foreach ($chansons as $chanson): ?>
     <div class="child">
         <?php
-        // Récupérer le lien de l'image de l'album pour cette chanson
         $lienImage = getImageByChanson($chanson->id);
-        // Vérifier si le lien de l'image de l'album est valide
         if ($lienImage) {
-            // Afficher l'image de l'album si le lien est valide
             echo "<img src='" . $lienImage['lienImage'] . "' alt=''>";
         } else {
-            // Afficher une image par défaut si le lien n'est pas valide
             echo "<img src='chemin/vers/image/default.jpg' alt='Image par défaut'>";
         }
         ?>
