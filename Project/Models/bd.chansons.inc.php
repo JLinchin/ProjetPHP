@@ -57,6 +57,7 @@ function getChansonsRandom()
 
     return $lesChansons;
 }
+
 function getChansonByIdC($idC)
 {
     try
@@ -64,6 +65,30 @@ function getChansonByIdC($idC)
         $cnx = connexionPDO();
         $req = $cnx->prepare("select * from chanson where id = :idC");
         $req->bindValue(':idC', $idC, PDO::PARAM_INT);
+
+        $req->execute();
+
+        $ligne = $req->fetch(PDO::FETCH_ASSOC);
+        $uneChanson = new Chanson($ligne["id"], $ligne["nom"], $ligne["dateSortie"], $ligne["genre"], $ligne["duree"], $ligne["meilleurePlace"], $ligne["paroles"], $ligne["idAlbum"]);
+    }
+
+    catch (PDOException $e)
+    {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+
+    return $uneChanson;
+}
+
+function getChansonByTitreDateSort($nom, $dateSortie)
+{
+    try
+    {
+        $cnx = connexionPDO();
+        $req = $cnx->prepare("select * from chanson where nom = :nom and dateSortie = :dateSortie");
+        $req->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $req->bindValue(':dateSortie', $dateSortie, PDO::PARAM_STR);
 
         $req->execute();
 

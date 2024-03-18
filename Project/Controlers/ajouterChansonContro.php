@@ -22,15 +22,22 @@ if ($_GET["action"] == "ajoutC")
         $meilleurePlace = $_POST['MeilleurePlace'];
         $parole = $_POST['Parole'];
 
-        if (getInterpretesByNom($nomInterprete) == 0)
+        if (getNbInterpretesByNom($nomInterprete) == 0)
         {
-            $uninterprete = new Interprete(0, "", "", $nomInterprete);
+            $uninterprete = new Interprete(0, $nomInterprete);
             addInterprete($uninterprete);
         }
+
+        $unInterprete = getInterpretesByNom($nomInterprete);
 
         try { 
             $uneChanson = new Chanson(0, $single, $dateSortie, $genre, $duree, $meilleurePlace, $parole, $album);
             addChanson($uneChanson);
+
+            $uneChanson = getChansonByTitreDateSort($single, $dateSortie);
+            addChanter($uneChanson, $unInterprete);
+
+            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
 
         } catch (PDOException $e) {
             echo "Error:" . $e->getMessage();
@@ -41,6 +48,11 @@ if ($_GET["action"] == "ajoutC")
 else
 {
     $idChanson = $_GET["idC"];
+
+    echo '<script>
+        stateObj = { foo: "?action=modif&idC=' . $idChanson .'"};
+        history.pushState(stateObj, "page 2", "?action=detail&idC=' . $idChanson . '");
+    </script>';
 
     $laChanson = getChansonByIdC($idChanson);
     $unInterprete = getInterpreteByIdC($idChanson);
@@ -56,17 +68,26 @@ else
         $meilleurePlace = $_POST['MeilleurePlace'];
         $parole = $_POST['Parole'];
 
-        if (getInterpretesByNom($nomInterprete) == 0)
+        if ($unInterprete->__get["nomScene"] != $nomInterprete)
         {
-            $uninterprete = new Interprete(0, "", "", $nomInterprete);
-            addInterprete($uninterprete);
+            if (getNbInterpretesByNom($nomInterprete) == 0)
+            {
+                $uninterprete = new Interprete(0, $nomInterprete);
+                addInterprete($uninterprete);
+            }
+
+            $nouvInterprete = getInterpretesByNom($nomInterprete);
+            updateChanter($nouvInterprete, $unInterprete, $laChanson);
         }
 
         try { 
             $uneChanson = new Chanson($idChanson, $single, $dateSortie, $genre, $duree, $meilleurePlace, $parole, $album);
             majChanson($uneChanson);
+            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
 
-        } catch (PDOException $e) {
+        }
+        catch (PDOException $e)
+        {
             echo "Error:" . $e->getMessage();
         }
     }

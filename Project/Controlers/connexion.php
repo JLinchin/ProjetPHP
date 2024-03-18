@@ -22,7 +22,7 @@ use function PHPSTORM_META\type;
             $_SESSION["nom"] = $unUser->getNom();
             $_SESSION["prenom"] = $unUser->getPrenom();
             
-            include "$racine/Controlers/recherche.php";
+            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
         }
         else
         {

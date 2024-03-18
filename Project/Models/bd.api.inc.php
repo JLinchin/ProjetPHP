@@ -4,6 +4,7 @@
 
     include_once "$racine/Models/bd.inc.php";
     include_once "$racine/Models/bd.chansons.inc.php";
+    include_once "$racine/Models/bd.chanter.inc.php";
 
     function getTitres($nom)
     {
@@ -22,6 +23,7 @@
     function suppTitre($idC)
     {
         delChanson($idC);
+        delChanter($idC);
 
         $result = ["true"];
 

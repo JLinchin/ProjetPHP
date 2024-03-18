@@ -123,14 +123,13 @@
         }
     }
 
-    function delInterpreteByIdC($uneChanson, $unInterprete)
+    function delChanter($idC)
     {
         try
         {
             $cnx = connexionPDO();
-            $req = $cnx->prepare("Delete From Chanter Where idInterprete = :IdInterprete And idChanson = :idChanson");
-            $req->bindValue(":idChanson", $uneChanson->__get("id"), PDO::PARAM_INT);
-            $req->bindValue(":IdInterprete", $unInterprete->__get("id"), PDO::PARAM_INT);
+            $req = $cnx->prepare("Delete From Chanter Where idChanson = :idChanson");
+            $req->bindValue(":idChanson", $idC, PDO::PARAM_INT);
             $req->execute();
         }
 

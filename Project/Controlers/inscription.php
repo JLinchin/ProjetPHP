@@ -20,7 +20,8 @@
             $_SESSION["nom"] = $nom;
             $_SESSION["prenom"] = $prenom;
             $_SESSION["is_co"] = true;
-            include "$racine/Controlers/recherche.php";
+            
+            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
         }
         else
         {

@@ -4,7 +4,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <div class="insertion">
-    <form <?php if ($_GET["action"] == "ajoutC") echo 'action="./?action=ajoutC"'; else echo 'action="./?action=ajoutC&idC=' . $_GET["idC"] . '"'; ?> method="POST">
+    <form <?php if ($_GET["action"] == "ajoutC") echo 'action="./?action=ajoutC"'; else echo 'action="./?action=modif&idC=' . $_GET["idC"] . '"'; ?> method="POST">
         <input class="Ajout" type="text" name="Interprete" placeholder="Interprète" <?php if ($_GET["action"] == "modif") echo 'value="' . $unInterprete->__get("nomScene") .'"' ?>>
         <input class="Ajout" type="text" name="Single" placeholder="Titre Single" <?php if ($_GET["action"] == "modif") echo 'value="' . $laChanson->__get("nom") .'"' ?>>
         <input class="Ajout" type="text" name="Duree" placeholder="Durée" <?php if ($_GET["action"] == "modif") echo 'value="' . $laChanson->__get("duree") .'"' ?>>

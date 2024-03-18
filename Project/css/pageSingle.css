@@ -10,7 +10,7 @@ body{
 }
 
 .single {
-    background-color: #fd3f99;
+    background-color: rgba(253, 63, 153, 0.75);
     margin-top: 60px;
     height: 720px;
     padding-top: 20px;
@@ -43,7 +43,7 @@ body{
 }
 
 .duree{
-    margin-top: 24px;
+    margin-top: 16px;
     font-size: 20px;
 }
 
@@ -89,25 +89,25 @@ body{
 }
 
 .btnModif{
+    background: #24ccfd;
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    background: #BBF6BE;
     
 }
 
 .btnModif:hover{
     cursor: pointer;
-    background: #82EB88;
+    background: #fff17c;
 }
 
 .btnSupp {
     border-radius: 15px;
     border: 1px solid rgba(0, 0, 0, 0.50);
-    background: #ff615e;
+    background: rgba(253, 63, 153, 0.75);
 }
 
 .btnSupp:hover{
     cursor: pointer;
-    background: #ff4c48 ;
+    background: rgba(253, 63, 153) ;
 }
 

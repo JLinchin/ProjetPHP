@@ -5,6 +5,7 @@
                 <div class="infoDuSingle">
                     <h2 class="nomInterprete"><?php echo $unInterprete->__get("nomScene"); ?></h2>
                     <h2 class="titreAlbum"><?php echo $unAlbum->__get("nom"); ?></h2>
+                    <h2 class="place"><?php echo $uneChanson->__get("meilleurePlace"); ?></h2>
                     <h2 class="duree"><?php echo $uneChanson->__get("duree"); ?></h2>
                 </div>
             </div>
