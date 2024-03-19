@@ -11,11 +11,13 @@
                     <li>jminchin.sio@gmail.com</li>
                     <li>nrouire.sio@gmail.com</li>
                     <li>lpaulze.sio@gmail.com</li>
-                    <li>pfernandes.sio1@gmail.com</li>
+                    <li>pfernandes.sio@gmail.com</li>
+                
                 </ul>
-                <ul class="website">
-                    <li href="https://github.com/JLinchin/ProjetPHP">Github</li>
-                </ul>
+                <a href="https://github.com/JLinchin/ProjetPHP" target="blank">
+                    <ul class="website">
+                    </ul>
+                    </a>
             </div>
         </div>
     </footer>

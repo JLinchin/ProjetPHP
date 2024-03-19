@@ -43,12 +43,13 @@ body{
 }
 
 .website{
-    height: auto;
+    height: 150px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: end;
-    width: 20%;
     color: white;
     list-style-type: none;
     content: url(../Assets/pngimg.com\ -\ github_PNG80-modified.png);
 }
+
