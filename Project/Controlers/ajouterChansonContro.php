@@ -37,7 +37,7 @@ if ($_GET["action"] == "ajoutC")
             $uneChanson = getChansonByTitreDateSort($single, $dateSortie);
             addChanter($uneChanson, $unInterprete);
 
-            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
+            echo '<script>location.replace("http://localhost/ProjetPHP/Project");</script>';
 
         } catch (PDOException $e) {
             echo "Error:" . $e->getMessage();
@@ -83,7 +83,7 @@ else
         try { 
             $uneChanson = new Chanson($idChanson, $single, $dateSortie, $genre, $duree, $meilleurePlace, $parole, $album);
             majChanson($uneChanson);
-            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
+            echo '<script>location.replace("http://localhost/ProjetPHP/Project");</script>';
 
         }
         catch (PDOException $e)
