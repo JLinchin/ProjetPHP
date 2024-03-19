@@ -22,7 +22,7 @@ use function PHPSTORM_META\type;
             $_SESSION["nom"] = $unUser->getNom();
             $_SESSION["prenom"] = $unUser->getPrenom();
             
-            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
+            echo '<script>location.replace("http://localhost/ProjetPHP/Master/Project");</script>';
         }
         else
         {
