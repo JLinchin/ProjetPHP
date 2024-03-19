@@ -54,7 +54,7 @@ async function search()
 	if (valSearch != "")
 	{
         //On attend le contenu retourné par le lien passé en paramètre
-		response = await fetch('http://localhost/PHPChansons/Master/Project/Models/bd.api.inc.php?action=search&nom=' + valSearch);
+		response = await fetch('http://localhost/ProjetPHP/Project/Models/bd.api.inc.php?action=search&nom=' + valSearch);
         //On attend le contenu retourné sous la forme d'un fichier JSON
         data = await response.json();
 
@@ -85,6 +85,6 @@ async function supprimer(idC)
     {
         response = await fetch('http://localhost/ProjetPHP/Project/Models/bd.api.inc.php?action=supp&id=' + idC);
 
-        location.replace("http://localhost/PHPChansons/Master/Project");
+        location.replace("http://localhost/ProjetPHP/Project");
     }
 }
