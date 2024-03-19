@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 include "$racine/views/entete.php";
 
 if (isset($_POST['nom']) && isset($_FILES['lienImage']))
-    include "$racine/views/pageAccueil.php";
+    echo '<script>location.replace("http://localhost/ProjetPHP/Project");</script>';
 else
     include "$racine/views/ajouterAlbum.php";
 
