@@ -83,7 +83,7 @@ async function supprimer(idC)
 
     if (choix)
     {
-        response = await fetch('http://localhost/PHPChansons/Master/Project/Models/bd.api.inc.php?action=supp&id=' + idC);
+        response = await fetch('http://localhost/ProjetPHP/Project/Models/bd.api.inc.php?action=supp&id=' + idC);
 
         location.replace("http://localhost/PHPChansons/Master/Project");
     }
