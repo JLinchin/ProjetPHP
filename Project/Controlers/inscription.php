@@ -21,7 +21,7 @@
             $_SESSION["prenom"] = $prenom;
             $_SESSION["is_co"] = true;
             
-            echo '<script>location.replace("http://localhost/PHPChansons/Master/Project");</script>';
+            echo '<script>location.replace("http://localhost/ProjetPHP/Project");</script>';
         }
         else
         {
